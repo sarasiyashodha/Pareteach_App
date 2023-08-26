@@ -20,7 +20,7 @@ class ClassworkTile extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(12.0),
         child: Column(
           children: [
             Align(
