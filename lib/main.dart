@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/home_page.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/loading_screen.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/user_selection_page.dart';
+import 'package:mini_project_mobile_app/Screens/ParentAccount/login_page.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/parent_profile.dart';
 import 'package:mini_project_mobile_app/Screens/Homework&Assignments/homework_&_assignments.dart';
 import 'package:mini_project_mobile_app/Screens/Homework&Assignments/homework.dart';
@@ -47,6 +48,8 @@ class MyApp extends StatelessWidget {
         '/fourteen': (context) => AttendanceReport(),
         '/fifteen': (context) => ForgotPassword(),
         '/sixteen': (context) => VerifyCode(),
+        '/seventeen': (context) => LoginPage(),
+        
 
 
       },
