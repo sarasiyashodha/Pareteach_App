@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
 import 'verify_code.dart';
 
-void main() {
-  runApp(MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/verify_code': (context) => VerifyCode(),
-      // Add more routes if needed
-    },
-  ));
-}
 
 class ForgotPassword extends StatelessWidget{
     @override
@@ -65,7 +56,7 @@ class ForgotPassword extends StatelessWidget{
         
                 ElevatedButton(
                 onPressed: () {
-                    Navigator.pushNamed(context, '/verify_code');
+                    Navigator.pushNamed(context, '/sixteen');
                 },
                 
                 style: ElevatedButton.styleFrom(

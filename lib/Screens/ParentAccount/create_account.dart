@@ -120,7 +120,9 @@ class _CreateAccountState extends State<CreateAccount> {
 
                 // create account button
                 CreateAccountButton(
-                  onTap: accountcreate,
+                  onTap: () {
+                    Navigator.pushNamed(context, '/seventeen');
+                  }
                   
                 ),
 
@@ -136,15 +138,21 @@ class _CreateAccountState extends State<CreateAccount> {
 
                 const SizedBox(height: 3),
 
-                Text(
-                  "Sign In",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color:
-                        Colors.red, // Use 'Colors.red' instead of 'colors.red'
-                    fontWeight: FontWeight.w400,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/seventeen');
+                  },
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.red,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
+
+
               ],
             ),
           ),
