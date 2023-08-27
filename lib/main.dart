@@ -14,6 +14,8 @@ import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/holidays.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/extra_classes.dart';
 import 'package:mini_project_mobile_app/Screens/Attendance/attendance_report.dart';
+import 'package:mini_project_mobile_app/Screens/ParentAccount/forgot_password.dart';
+import 'package:mini_project_mobile_app/Screens/ParentAccount/verify_code.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,6 +45,8 @@ class MyApp extends StatelessWidget {
         '/twelve': (context) => Holidays(),
         '/thirteen': (context) => ExtraClasses(),
         '/fourteen': (context) => AttendanceReport(),
+        '/fifteen': (context) => ForgotPassword(),
+        '/sixteen': (context) => VerifyCode(),
 
 
       },

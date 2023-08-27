@@ -4,6 +4,19 @@ import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 import 'package:mini_project_mobile_app/Components/square_tile.dart';
 
 import 'create_account.dart';
+import 'forgot_password.dart';
+
+
+void main() {
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => LoginPage(),
+      '/forgot_password': (context) => ForgotPassword(),
+      // Add more routes if needed
+    },
+  ));
+}
 
 class LoginPage extends StatelessWidget {
   // Text editing controllers
@@ -67,10 +80,21 @@ class LoginPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
+                      GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ForgotPassword()),
+                        );
+                      },
+                      child: Text(
                         'Forgot Password?',
-                        style: TextStyle(color: Colors.blue[600]),
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                    ),
                     ],
                   ),
                 ),
@@ -161,8 +185,3 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: LoginPage(),
-  ));
-}
