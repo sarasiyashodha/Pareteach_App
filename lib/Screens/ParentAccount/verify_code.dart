@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mini_project_mobile_app/Components/verify_button.dart';
+import 'OTP_Verified.dart';
 
 class VerifyCode extends StatelessWidget {
   @override
@@ -65,7 +67,7 @@ class VerifyCode extends StatelessWidget {
                             }
                           },
                           onSaved: (pin) {},
-                          decoration: InputDecoration(hintText: ""),
+                          decoration: InputDecoration(hintText: ""),    
                           style: Theme.of(context).textTheme.headline6,
                           keyboardType: TextInputType.number,
                           textAlign: TextAlign.center,
@@ -79,24 +81,13 @@ class VerifyCode extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 40),
-                ElevatedButton(
-                  onPressed: () {
-                    // Implement your verification logic here
+                
+                VerifyButton(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/eighteen');
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff305d62),
-                    padding: EdgeInsets.symmetric(horizontal: 160, vertical: 13),
-                  ),
-                  child: Text(
-                    'VERIFY',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
                 ),
+                  
                 const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
