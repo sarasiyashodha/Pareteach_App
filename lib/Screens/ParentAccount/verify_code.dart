@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mini_project_mobile_app/Components/verify_button.dart';
-import 'OTP_Verified.dart';
+
 
 class VerifyCode extends StatelessWidget {
   @override
