@@ -18,7 +18,6 @@ import 'package:mini_project_mobile_app/Screens/Updates/extra_classes.dart';
 import 'package:mini_project_mobile_app/Screens/Attendance/attendance_report.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/forgot_password.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/verify_code.dart';
-import 'package:mini_project_mobile_app/Screens/ParentAccount/OTP_Verified.dart';
 import 'package:mini_project_mobile_app/Screens/notifications.dart';
 import 'package:mini_project_mobile_app/Screens/recommandations.dart';
 
