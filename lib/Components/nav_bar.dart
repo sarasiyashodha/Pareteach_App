@@ -18,16 +18,23 @@ class NavBar extends StatelessWidget {
                 radius: 25.0,
             ),
           ),
-          ListTile(
+
+           ListTile(
             leading: Icon(Icons.person),
             title: Text("Profile"),
-            onTap: () => print('hello'),
+            onTap: () {
+              Navigator.pushNamed(context, '/three'); // Navigate to '/three'
+            },
           ),
+
           ListTile(
             leading: Icon(Icons.notifications),
             title: Text("Notifications"),
-            onTap: () => print('hello'),
+            onTap: () {
+              Navigator.pushNamed(context, '/nineteen'); // Navigate to '/three'
+            },
           ),
+          
           ListTile(
             leading: Icon(Icons.border_color_outlined),
             title: Text("Homework and Assignments"),
@@ -35,6 +42,7 @@ class NavBar extends StatelessWidget {
               Navigator.pushNamed(context, '/four');
             },
           ),
+
           ListTile(
             leading: Icon(Icons.bookmark_added),
             title: Text("Marks of Quizzes and Exams"),
@@ -42,11 +50,13 @@ class NavBar extends StatelessWidget {
               Navigator.pushNamed(context, '/seven');
             },
           ),
+
           ListTile(
             leading: Icon(Icons.stacked_line_chart_sharp),
             title: Text("Progress"),
             onTap: () => print('hello'),
           ),
+
           ListTile(
             leading: Icon(Icons.calendar_month_outlined),
             title: Text("Updates"),
@@ -54,6 +64,7 @@ class NavBar extends StatelessWidget {
               Navigator.pushNamed(context, '/ten');
             },
           ),
+
           ListTile(
             leading: Icon(Icons.check_circle_sharp),
             title: Text("Attendance"),
@@ -61,21 +72,27 @@ class NavBar extends StatelessWidget {
               Navigator.pushNamed(context, '/fourteen');
             },
           ),
+
           ListTile(
             leading: Icon(Icons.star),
             title: Text("Recommendations"),
-            onTap: () => print('hello'),
+            onTap: () {
+              Navigator.pushNamed(context, '/twenty');
+            },
           ),
+
           ListTile(
             leading: Icon(Icons.settings),
             title: Text("Settings"),
             onTap: () => print('hello'),
           ),
+
           ListTile(
             leading: Icon(Icons.arrow_back_sharp),
             title: Text("Logout"),
             onTap: () => print('hello'),
           ),
+          
         ],
       ),
     );

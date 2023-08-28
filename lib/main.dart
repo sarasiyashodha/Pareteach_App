@@ -19,6 +19,10 @@ import 'package:mini_project_mobile_app/Screens/Attendance/attendance_report.dar
 import 'package:mini_project_mobile_app/Screens/ParentAccount/forgot_password.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/verify_code.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/OTP_Verified.dart';
+import 'package:mini_project_mobile_app/Screens/notifications.dart';
+import 'package:mini_project_mobile_app/Screens/recommandations.dart';
+
+
 
 void main() {
   runApp(MyApp());
@@ -52,6 +56,9 @@ class MyApp extends StatelessWidget {
         '/sixteen': (context) => VerifyCode(),
         '/seventeen': (context) => LoginPage(),
         '/eighteen': (context) => VerifiedOTP(),
+        '/nineteen': (context) => Notifications(),
+        '/twenty': (context) => Recommendations(),
+
         
 
 
