@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'verify_code.dart';
+import 'package:mini_project_mobile_app/Components/Continue_Button.dart';
 
 
 class ForgotPassword extends StatelessWidget{
@@ -54,27 +55,13 @@ class ForgotPassword extends StatelessWidget{
 
                 const SizedBox(height: 40),
         
-                ElevatedButton(
-                onPressed: () {
+                ContinueButton(
+                  onTap: () {
                     Navigator.pushNamed(context, '/sixteen');
-                },
+                  },
+                ),
                 
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff305d62),
-                  
-                  padding: EdgeInsets.symmetric(horizontal: 150, vertical: 13),
-                  
-                ),
-                child: Text(
-                  'CONTINUE',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                ),
+            
 
          
               ],
