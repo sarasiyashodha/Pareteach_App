@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/top_bar.dart';
-import 'package:mini_project_mobile_app/constants.dart';
 import 'package:mini_project_mobile_app/Components/quiz_marks.dart';
+
+import '../../Components/nav_bar.dart';
 
 class MarksOfQuizzes extends StatelessWidget {
   const MarksOfQuizzes({super.key});
@@ -9,32 +9,32 @@ class MarksOfQuizzes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Padding(
-        padding: EdgeInsets.only(left: 12.0, right: 12.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 60.0,
+      drawer: NavBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF305D62),
+        title: Text("Marks of Quizzes"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("Images/parentProfile.jpg"),
             ),
-            TopBar(),
-            SizedBox(
-              height: 40.0,
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text('Marks of Quizzes',
-                style: ktitleTextStyle,
-              ),
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            QuizMarks(name: "Quiz 1", marks: "90%",),
-            QuizMarks(name: "Quiz 2", marks: "80%",),
-            QuizMarks(name: "Quiz 3", marks: "60%",),
-            QuizMarks(name: "Quiz 4", marks: "40%",),
-
-          ],
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+        child: Center( // Center the content horizontally and vertically
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+             
+              QuizMarks(name: "Quiz 1", marks: "90%",),
+              QuizMarks(name: "Quiz 2", marks: "80%",),
+              QuizMarks(name: "Quiz 3", marks: "60%",),
+              QuizMarks(name: "Quiz 4", marks: "40%",),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -52,5 +52,3 @@ class MarksOfQuizzes extends StatelessWidget {
     );
   }
 }
-
-

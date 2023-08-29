@@ -54,7 +54,9 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.stacked_line_chart_sharp),
             title: Text("Progress"),
-            onTap: () => print('hello'),
+            onTap: (){
+              Navigator.pushNamed(context, '/twenty_one');
+            },
           ),
 
           ListTile(
