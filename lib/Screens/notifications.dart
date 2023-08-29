@@ -16,6 +16,14 @@ class _NotificationsState extends State<Notifications> {
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
         title: Text("Notifications"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("Images/parentProfile.jpg"),
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -45,7 +53,7 @@ class NotificationBox extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 10, left: 10), // Added padding
+        padding: const EdgeInsets.only(top: 10, left: 10),
         child: Text(
           "Notification",
           style: TextStyle(
