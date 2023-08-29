@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/top_bar.dart';
-import 'package:mini_project_mobile_app/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../../Components/nav_bar.dart';
 
 class AttendanceReport extends StatefulWidget {
   const AttendanceReport({super.key});
@@ -14,31 +14,32 @@ class _AttendanceReportState extends State<AttendanceReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF305D62),
+        title: Text("Attendance"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("Images/parentProfile.jpg"),
+            ),
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            const SizedBox(
-              height: 60.0,
-            ),
-            const TopBar(),
-            const SizedBox(
-              height: 40.0,
-            ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text('Attendance',
-                style: ktitleTextStyle,
-              ),
-            ),
+            
             const SizedBox(
               height: 40.0,
             ),
             TableCalendar(
               focusedDay: DateTime.now(),
               firstDay: DateTime.utc(2000, 01, 01),
-              lastDay: DateTime.utc(2030, 12, 31),),
-
+              lastDay: DateTime.utc(2030, 12, 31),
+            ),
           ],
         ),
       ),
@@ -48,13 +49,12 @@ class _AttendanceReportState extends State<AttendanceReport> {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home",),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search",),
-          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Academics",),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: "Notifications",),
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Academics"),
+          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: "Notifications"),
         ],
       ),
-
     );
   }
 }

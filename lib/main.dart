@@ -20,6 +20,7 @@ import 'package:mini_project_mobile_app/Screens/ParentAccount/forgot_password.da
 import 'package:mini_project_mobile_app/Screens/ParentAccount/verify_code.dart';
 import 'package:mini_project_mobile_app/Screens/notifications.dart';
 import 'package:mini_project_mobile_app/Screens/recommandations.dart';
+import 'package:mini_project_mobile_app/Screens/Progress.dart';
 
 
 
@@ -57,6 +58,8 @@ class MyApp extends StatelessWidget {
         '/eighteen': (context) => VerifiedOTP(),
         '/nineteen': (context) => Notifications(),
         '/twenty': (context) => Recommendations(),
+         '/twenty_one': (context) => Progress(),
+
 
         
 
