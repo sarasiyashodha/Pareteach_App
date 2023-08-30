@@ -31,7 +31,11 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-.gradle/
+
+# Exclude .gradle/ folder within the android/ directory
+android/.gradle/
+# Exclude specific gradle folder within the android/ directory
+android/gradle/
 
 # Symbolication related
 app.*.symbols
