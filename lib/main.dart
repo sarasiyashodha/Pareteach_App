@@ -20,6 +20,11 @@ import 'package:mini_project_mobile_app/Screens/ParentAccount/forgot_password.da
 import 'package:mini_project_mobile_app/Screens/ParentAccount/verify_code.dart';
 import 'package:mini_project_mobile_app/Screens/notifications.dart';
 import 'package:mini_project_mobile_app/Screens/recommandations.dart';
+import 'package:mini_project_mobile_app/Screens/Progress.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_verify_code.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_OTP_verified.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_login_page.dart';
+
 
 
 
@@ -57,6 +62,14 @@ class MyApp extends StatelessWidget {
         '/eighteen': (context) => VerifiedOTP(),
         '/nineteen': (context) => Notifications(),
         '/twenty': (context) => Recommendations(),
+        '/twenty_one': (context) => Progress(),
+        '/twenty_two': (context) => VerifyCode2(),
+        '/twenty_three': (context) => VerifiedOTP2(),
+        '/twenty_four': (context) => LoginPage2(),
+        
+
+
+
 
         
 

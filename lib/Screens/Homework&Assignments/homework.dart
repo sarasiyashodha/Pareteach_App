@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/top_bar.dart';
 import 'package:mini_project_mobile_app/constants.dart';
 import 'package:mini_project_mobile_app/lists.dart';
+
+import '../../Components/nav_bar.dart';
 
 class Homework extends StatefulWidget {
   const Homework({super.key});
@@ -16,21 +17,24 @@ class _HomeworkState extends State<Homework> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF305D62),
+        title: Text("Homework"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("Images/parentProfile.jpg"),
+            ),
+          ),
+        ],
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(5.0),
         child: Column(
           children: [
-            const SizedBox(
-              height: 60.0,
-            ),
-            const TopBar(),
-            const SizedBox(
-              height: 40.0,
-            ),
-            const Align(
-              alignment: Alignment.topLeft,
-                  child: Text('Homework', style: ktitleTextStyle,),
-            ),
+            
             const SizedBox(
               height: 40.0,
             ),
@@ -38,10 +42,10 @@ class _HomeworkState extends State<Homework> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.check_circle_sharp, color: Color(0XFF2ECC71),),
+                    Icon(Icons.check_circle_sharp, color: Color(0XFF2ECC71)),
                     Padding(
                       padding: EdgeInsets.all(4.0),
-                      child: Text("Submitted", style: knormalTextStyle,),
+                      child: Text("Submitted", style: knormalTextStyle),
                     ),
                   ],
                 ),
@@ -50,10 +54,10 @@ class _HomeworkState extends State<Homework> {
                 ),
                 Row(
                   children: [
-                    Icon(Icons.cancel_sharp, color: Color(0XFFE74C3C),),
+                    Icon(Icons.cancel_sharp, color: Color(0XFFE74C3C)),
                     Padding(
                       padding: EdgeInsets.all(4.0),
-                      child: Text("Not submitted", style: knormalTextStyle,),
+                      child: Text("Not submitted", style: knormalTextStyle),
                     ),
                   ],
                 ),
@@ -62,10 +66,10 @@ class _HomeworkState extends State<Homework> {
                 ),
                 Row(
                   children: [
-                    Icon(Icons.error_sharp, color: Color(0XFFEABF29),),
+                    Icon(Icons.error_sharp, color: Color(0XFFEABF29)),
                     Padding(
                       padding: EdgeInsets.all(4.0),
-                      child: Text("Due today", style: knormalTextStyle,),
+                      child: Text("Due today", style: knormalTextStyle),
                     ),
                   ],
                 ),
@@ -84,22 +88,21 @@ class _HomeworkState extends State<Homework> {
                     padding: const EdgeInsets.all(10.0),
                     height: 80,
                     width: 400,
-                    decoration: BoxDecoration(border: Border.all(color: list.colors[index], width: 3.0),
-                      borderRadius: const BorderRadius.all(Radius.circular(15.0),),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: list.colors[index], width: 3.0),
+                      borderRadius: const BorderRadius.all(Radius.circular(15.0)),
                     ),
                     child: Row(
                       children: [
-                        Icon(list.icons[index], color: list.colors[index], size: 30.0,),
+                        Icon(list.icons[index], color: list.colors[index], size: 30.0),
                         const SizedBox(
                           width: 20.0,
                         ),
-                        Text(list.text[index], style: knormalTextStyle,),
+                        Text(list.text[index], style: knormalTextStyle),
                       ],
                     ),
                   );
-
-              },
-
+                },
               ),
             ),
           ],
@@ -111,16 +114,12 @@ class _HomeworkState extends State<Homework> {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home",),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search",),
-          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Academics",),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: "Notifications",),
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Academics"),
+          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: "Notifications"),
         ],
       ),
     );
   }
 }
-
-
-
-

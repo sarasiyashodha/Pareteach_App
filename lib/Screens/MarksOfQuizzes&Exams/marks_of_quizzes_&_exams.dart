@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/top_bar.dart';
-import 'package:mini_project_mobile_app/constants.dart';
 import 'package:mini_project_mobile_app/Components/classwork_tile.dart';
+
+import '../../Components/nav_bar.dart';
 
 class MarksOfQuizzesAndExams extends StatelessWidget {
   const MarksOfQuizzesAndExams({super.key});
@@ -9,44 +9,49 @@ class MarksOfQuizzesAndExams extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 12.0, right: 12.0),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 60.0,
+      
+      drawer: NavBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF305D62),
+        title: Text("Marks of Quizzes and Exams"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("Images/parentProfile.jpg"),
             ),
-            const TopBar(),
-            const SizedBox(
-              height: 40.0,
-            ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text('Marks of Quizzes and Exams',
-                  style: ktitleTextStyle,
+          ),
+        ],
+      ),
+      body: Center( // Center the content horizontally
+        child: Padding(
+          padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Center the content vertically
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/eight');
+                },
+                child: ClassworkTile(
+                  title: "Quizzes",
+                  image: AssetImage('Images/quizzes.png'),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 40.0,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/eight');
-              },
-                child: ClassworkTile(title: "Quizzes", image: AssetImage('Images/quizzes.png'),),),
-            const SizedBox(
-              height: 40.0,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/nine');
-              },
-                child: ClassworkTile(title: "Exams", image: AssetImage('Images/exams.png'))),
-
-
-
-
-          ],
+              SizedBox(
+                height: 40.0,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/nine');
+                },
+                child: ClassworkTile(
+                  title: "Exams",
+                  image: AssetImage('Images/exams.png'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -55,14 +60,12 @@ class MarksOfQuizzesAndExams extends StatelessWidget {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home",),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search",),
-          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Academics",),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: "Notifications",),
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Academics"),
+          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: "Notifications"),
         ],
       ),
-
-
     );
   }
 }
