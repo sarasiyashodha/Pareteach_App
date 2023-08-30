@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/home_page.dart';
-import 'package:mini_project_mobile_app/Screens/HomePage/loading_screen.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/user_selection_page.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/OTP_Verified.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/login_page.dart';
@@ -42,7 +41,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/one': (context) => LoadingScreen(),
+        // '/one': (context) => LoadingScreen(),
         '/two': (context) => UserSelectionPage(),
         '/three': (context) => ParentProfile(),
         '/four': (context) => HomeworkAndAssignments(),
