@@ -3,22 +3,22 @@ import 'package:mini_project_mobile_app/Components/my_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 import 'package:mini_project_mobile_app/Components/square_tile.dart';
 
-import 'create_account.dart';
-import 'forgot_password.dart';
+import 'teachers_create_account.dart';
+import 'teachers_forgot_password.dart';
 
 
 void main() {
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
-      '/': (context) => LoginPage(),
-      '/forgot_password': (context) => ForgotPassword(),
+      '/': (context) => LoginPage2(),
+      '/forgot_password': (context) => ForgotPassword2(),
       // Add more routes if needed
     },
   ));
 }
 
-class LoginPage extends StatelessWidget {
+class LoginPage2 extends StatelessWidget {
   // Text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
@@ -84,7 +84,7 @@ class LoginPage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ForgotPassword()),
+                          MaterialPageRoute(builder: (context) => ForgotPassword2()),
                         );
                       },
                       child: Text(
@@ -103,8 +103,8 @@ class LoginPage extends StatelessWidget {
 
                 MyButton(
                   onTap: () {
-                    Navigator.pushNamed(context, '/nineteen');
-                  },
+                    signUserIn();
+                   },
                 ),
 
                 const SizedBox(height: 20),
@@ -163,7 +163,7 @@ class LoginPage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => CreateAccount()),
+                          MaterialPageRoute(builder: (context) => CreateAccount2()),
                         );
                       },
                       child: Text(
