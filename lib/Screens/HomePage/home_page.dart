@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'user_selection_page.dart';// Import your user_selection_page.dart
+import 'user_selection_page.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';// Import your user_selection_page.dart
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Add a delay and navigate to the UserSelectionPage
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => UserSelectionPage()),
@@ -28,6 +29,10 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('Images/logo.png'),
+            SpinKitCircle(
+              color: Colors.grey,
+              size: 60.0,
+            ),
           ],
         ),
       ),
