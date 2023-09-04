@@ -16,7 +16,7 @@ class HomeworkAndAssignments2 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpg"),
+              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
             ),
           ),
         ],

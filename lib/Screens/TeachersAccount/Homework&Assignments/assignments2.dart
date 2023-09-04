@@ -25,7 +25,7 @@ class _Assignments2State extends State<Assignments2> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpg"),
+              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
             ),
           ),
         ],
