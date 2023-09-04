@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
+
 
 import '../../Components/nav_bar.dart';
 
@@ -17,7 +17,7 @@ class _HolidaysState extends State<Holidays> {
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
-        title: Text("Notifications"),
+        title: Text("Holidays"),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -35,11 +35,11 @@ class _HolidaysState extends State<Holidays> {
             const SizedBox(
               height: 40.0,
             ),
-            TableCalendar(
-              focusedDay: DateTime.now(),
-              firstDay: DateTime.utc(2000, 01, 01),
-              lastDay: DateTime.utc(2030, 12, 31),
-            ),
+            // TableCalendar(
+            //   focusedDay: DateTime.now(),
+            //   firstDay: DateTime.utc(2000, 01, 01),
+            //   lastDay: DateTime.utc(2030, 12, 31),
+            // ),
           ],
         ),
       ),

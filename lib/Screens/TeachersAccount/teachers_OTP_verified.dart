@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/Reset_Password_Button.dart';
+import 'package:mini_project_mobile_app/Components/reset_password_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 
 

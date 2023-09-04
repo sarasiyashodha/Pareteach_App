@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/Continue_Button.dart';
+import 'package:mini_project_mobile_app/Components/continue_button.dart';
 
 
 
