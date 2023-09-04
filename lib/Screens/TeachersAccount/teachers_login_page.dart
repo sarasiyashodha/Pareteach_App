@@ -103,8 +103,8 @@ class LoginPage2 extends StatelessWidget {
 
                 MyButton(
                   onTap: () {
-                    signUserIn();
-                   },
+                    Navigator.pushNamed(context, '/twenty_five');
+                  },
                 ),
 
                 const SizedBox(height: 20),

@@ -10,6 +10,11 @@ import 'package:mini_project_mobile_app/Screens/Homework&Assignments/assignments
 import 'package:mini_project_mobile_app/Screens/MarksOfQuizzes&Exams/marks_of_quizzes_&_exams.dart';
 import 'package:mini_project_mobile_app/Screens/MarksOfQuizzes&Exams/marks_of_quizzes.dart';
 import 'package:mini_project_mobile_app/Screens/MarksOfQuizzes&Exams/marks_of_exams.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/assignments2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/homework2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/homework_&_assignments2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/notification2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/teacher_profile.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/updates.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/holidays.dart';
@@ -65,6 +70,13 @@ class MyApp extends StatelessWidget {
         '/twenty_two': (context) => VerifyCode2(),
         '/twenty_three': (context) => VerifiedOTP2(),
         '/twenty_four': (context) => LoginPage2(),
+        '/twenty_five': (context) => Notifications2(),
+        '/twenty_six': (context) => TeacherProfile(),
+        '/twenty_seven': (context) => HomeworkAndAssignments2(),
+        '/twenty_eight': (context) => Homework2(),
+        '/twenty_nine': (context) => Assignments2(),
+
+        
         
 
 
