@@ -13,7 +13,15 @@ import 'package:mini_project_mobile_app/Screens/MarksOfQuizzes&Exams/marks_of_ex
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/assignments2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/homework2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/homework_&_assignments2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_exams2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_quizzes2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_quizzes_&_exams2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/events2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/extra_classes2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/holidays2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/updates2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/notification2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/progress2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teacher_profile.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/updates.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
@@ -75,14 +83,14 @@ class MyApp extends StatelessWidget {
         '/twenty_seven': (context) => HomeworkAndAssignments2(),
         '/twenty_eight': (context) => Homework2(),
         '/twenty_nine': (context) => Assignments2(),
-
-        
-        
-
-
-
-
-        
+        '/thirty': (context) => MarksOfQuizzesAndExams2(),
+        '/thirty_one': (context) => MarksOfQuizzes2(),
+        '/thirty_two': (context) => MarksOfExams2(),
+        '/thirty_three': (context) => Progress2(),
+        '/thirty_four': (context) => Updates2(),
+        '/thirty_five': (context) => Events2(),
+        '/thirty_six': (context) => ExtraClasses2(),
+        '/thirty_seven': (context) => Holidays2(),
 
 
       },

@@ -46,25 +46,25 @@ class NavBar2 extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.bookmark_added),
             title: Text("Marks of Quizzes and Exams"),
-            // onTap: () {
-            //   Navigator.pushNamed(context, '/seven');
-            // },
+            onTap: () {
+              Navigator.pushNamed(context, '/thirty');
+            },
           ),
 
           ListTile(
             leading: Icon(Icons.stacked_line_chart_sharp),
             title: Text("Progress"),
-            // onTap: (){
-            //   Navigator.pushNamed(context, '/twenty_one');
-            // },
+            onTap: (){
+              Navigator.pushNamed(context, '/thirty_three');
+            },
           ),
 
           ListTile(
             leading: Icon(Icons.calendar_month_outlined),
             title: Text("Updates"),
-            // onTap: () {
-            //   Navigator.pushNamed(context, '/ten');
-            // },
+            onTap: () {
+              Navigator.pushNamed(context, '/thirty_four');
+            },
           ),
 
           ListTile(

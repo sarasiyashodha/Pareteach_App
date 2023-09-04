@@ -17,7 +17,7 @@ class _HolidaysState extends State<Holidays> {
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
-        title: Text("Notifications"),
+        title: Text("Holidays"),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -31,7 +31,6 @@ class _HolidaysState extends State<Holidays> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            
             const SizedBox(
               height: 40.0,
             ),
@@ -51,8 +50,10 @@ class _HolidaysState extends State<Holidays> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Academics"),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: "Notifications"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.book_outlined), label: "Academics"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications), label: "Notifications"),
         ],
       ),
     );

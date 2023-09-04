@@ -26,7 +26,7 @@ class _Homework2State extends State<Homework2> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage("Images/parentProfile.jpg"),
+              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
             ),
           ),
         ],

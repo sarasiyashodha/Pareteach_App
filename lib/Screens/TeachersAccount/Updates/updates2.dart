@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/classwork_tile.dart';
+import 'package:mini_project_mobile_app/Components/updates_tile.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/nav_bar2.dart';
 
 
-class MarksOfQuizzesAndExams2 extends StatelessWidget {
-  const MarksOfQuizzesAndExams2({super.key});
+class Updates2 extends StatelessWidget {
+  const Updates2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       drawer: NavBar2(),
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
-        title: Text("Marks of Quizzes and Exams"),
+        title: Text("Updates"),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -23,32 +22,35 @@ class MarksOfQuizzesAndExams2 extends StatelessWidget {
           ),
         ],
       ),
-      body: Center( // Center the content horizontally
+      body: Center(
         child: Padding(
-          padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+          padding: const EdgeInsets.all(5.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center the content vertically
+            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/thirty_one');
+                  Navigator.pushNamed(context, '/thirty_five');
                 },
-                child: ClassworkTile(
-                  title: "Quizzes",
-                  image: AssetImage('Images/quizzes.png'),
-                ),
+                child: UpdatesTile(title: "Events", image: AssetImage('Images/events.png')),
               ),
               SizedBox(
-                height: 40.0,
+                height: 12.0,
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/thirty_two');
+                  Navigator.pushNamed(context, '/thirty_seven');
                 },
-                child: ClassworkTile(
-                  title: "Exams",
-                  image: AssetImage('Images/exams.png'),
-                ),
+                child: UpdatesTile(title: "Holidays", image: AssetImage('Images/holidays.png')),
+              ),
+              SizedBox(
+                height: 12.0,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/thirty_six');
+                },
+                child: UpdatesTile(title: "Extra classes", image: AssetImage('Images/extra_classes.png')),
               ),
             ],
           ),
