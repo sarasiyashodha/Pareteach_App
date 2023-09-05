@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/home_page.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/user_selection_page.dart';
-import 'package:mini_project_mobile_app/Screens/ParentAccount/OTP_Verified.dart';
+import 'package:mini_project_mobile_app/Screens/ParentAccount/OTP_verified.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/login_page.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/parent_profile.dart';
 import 'package:mini_project_mobile_app/Screens/Homework&Assignments/homework_&_assignments.dart';
@@ -32,7 +32,7 @@ import 'package:mini_project_mobile_app/Screens/Attendance/attendance_report.dar
 import 'package:mini_project_mobile_app/Screens/ParentAccount/forgot_password.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/verify_code.dart';
 import 'package:mini_project_mobile_app/Screens/notifications.dart';
-import 'package:mini_project_mobile_app/Screens/recommandations.dart';
+import 'package:mini_project_mobile_app/Screens/ParentAccount/recommandations.dart';
 import 'package:mini_project_mobile_app/Screens/Progress.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_verify_code.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_OTP_verified.dart';
