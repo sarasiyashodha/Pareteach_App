@@ -17,12 +17,14 @@ import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignm
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_exams2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_quizzes2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_quizzes_&_exams2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Reccomandations.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/events2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/extra_classes2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/holidays2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/updates2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/notification2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/progress2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page1.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teacher_profile.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/updates.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
@@ -93,7 +95,8 @@ class MyApp extends StatelessWidget {
         '/thirty_six': (context) => ExtraClasses2(),
         '/thirty_seven': (context) => Holidays2(),
         '/thirty_eight': (context) => AttendanceReport1(),
-
+        '/thirty_nine': (context) => Recommendation(),
+        '/fourty': (context) => SettingPage1(),
 
       },
     );
