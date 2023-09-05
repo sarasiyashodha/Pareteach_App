@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../Components/nav_bar.dart';
-import 'package:mini_project_mobile_app/constants.dart';
+import 'package:mini_project_mobile_app/Components/recommandations_tile.dart';
 
 class Recommendations extends StatefulWidget {
   const Recommendations({super.key});
@@ -34,42 +34,15 @@ class _RecommendationsState extends State<Recommendations> {
               SizedBox(
                 height: 40.0,
               ),
-              Container(
-                height: 180.0,
-                width: 356.0,
-                decoration: const BoxDecoration(
-                  color: Color(0XFFDFEEEA),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0),
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(25.0),
-                  child: Column(
-                    children: [
-                      Align(child: Text('Mathematics', style: knormalTextStyle),
-                        alignment: Alignment.topLeft,
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Align(child: Text('Master the basics.', style: knormalTextStyle),
-                        alignment: Alignment.topLeft,
-                      ),
-                      Align(child: Text('Do extra exercises.', style: knormalTextStyle),
-                        alignment: Alignment.topLeft,
-                      ),
-                      Align(child: Text('Practice regularly', style: knormalTextStyle),
-                        alignment: Alignment.topLeft,
-                      ),
-                      Align(child: Text('Improve critical thinking', style: knormalTextStyle),
-                        alignment: Alignment.topLeft,
-                      ),
-
-                    ],
-
-                  ),
-                ),
+              RecommandationsTile(),
+              SizedBox(
+                height: 20.0,
               ),
+              RecommandationsTile(),
+              SizedBox(
+                height: 20.0,
+              ),
+              RecommandationsTile(),
             ],
           ),
         ),
@@ -90,3 +63,5 @@ class _RecommendationsState extends State<Recommendations> {
     );
   }
 }
+
+
