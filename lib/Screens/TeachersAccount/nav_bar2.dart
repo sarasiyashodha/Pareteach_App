@@ -78,15 +78,17 @@ class NavBar2 extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.star),
             title: Text("Recommendations"),
-            // onTap: () {
-            //   Navigator.pushNamed(context, '/twenty');
-            // },
+            onTap: () {
+              Navigator.pushNamed(context, '/thirty_nine');
+            },
           ),
 
           ListTile(
             leading: Icon(Icons.settings),
             title: Text("Settings"),
-            onTap: () => print('hello'),
+            onTap: () {
+              Navigator.pushNamed(context, '/fourty');
+            },
           ),
 
           ListTile(
