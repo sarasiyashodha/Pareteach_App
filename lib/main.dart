@@ -10,6 +10,7 @@ import 'package:mini_project_mobile_app/Screens/Homework&Assignments/assignments
 import 'package:mini_project_mobile_app/Screens/MarksOfQuizzes&Exams/marks_of_quizzes_&_exams.dart';
 import 'package:mini_project_mobile_app/Screens/MarksOfQuizzes&Exams/marks_of_quizzes.dart';
 import 'package:mini_project_mobile_app/Screens/MarksOfQuizzes&Exams/marks_of_exams.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Attendance/attendance_report.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/assignments2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/homework2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/homework_&_assignments2.dart';
@@ -91,6 +92,7 @@ class MyApp extends StatelessWidget {
         '/thirty_five': (context) => Events2(),
         '/thirty_six': (context) => ExtraClasses2(),
         '/thirty_seven': (context) => Holidays2(),
+        '/thirty_eight': (context) => AttendanceReport1(),
 
 
       },

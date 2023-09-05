@@ -70,9 +70,9 @@ class NavBar2 extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.check_circle_sharp),
             title: Text("Attendance"),
-            // onTap: () {
-            //   Navigator.pushNamed(context, '/fourteen');
-            // },
+            onTap: () {
+              Navigator.pushNamed(context, '/thirty_eight');
+            },
           ),
 
           ListTile(
