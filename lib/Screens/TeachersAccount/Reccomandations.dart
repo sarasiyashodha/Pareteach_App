@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/nav_bar2.dart';
+import 'package:mini_project_mobile_app/Components/recommandations_tile.dart';
 
 class Recommendation extends StatefulWidget {
   const Recommendation({super.key});
@@ -25,7 +26,35 @@ class _RecommendationState extends State<Recommendation> {
           ),
         ],
       ),
-     
+     body: Center(
+       child: Padding(
+         padding: const EdgeInsets.all(8.0),
+         child: Column(
+           children: [
+             SizedBox(
+               height: 40.0,
+             ),
+             RecommendationsTile(),
+             SizedBox(
+               height: 20.0,
+             ),
+             RecommendationsTile(),
+             SizedBox(
+               height: 20.0,
+             ),
+             RecommendationsTile(),
+             SizedBox(
+               height: 20.0,
+             ),
+             RecommendationsTile(),
+             SizedBox(
+               height: 20.0,
+             ),
+             RecommendationsTile(),
+           ],
+         ),
+       ),
+     ),
      
 
       bottomNavigationBar: BottomNavigationBar(

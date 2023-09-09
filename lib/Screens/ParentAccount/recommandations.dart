@@ -34,15 +34,15 @@ class _RecommendationsState extends State<Recommendations> {
               SizedBox(
                 height: 40.0,
               ),
-              RecommandationsTile(),
+              RecommendationsTile(),
               SizedBox(
                 height: 20.0,
               ),
-              RecommandationsTile(),
+              RecommendationsTile(),
               SizedBox(
                 height: 20.0,
               ),
-              RecommandationsTile(),
+              RecommendationsTile(),
             ],
           ),
         ),
