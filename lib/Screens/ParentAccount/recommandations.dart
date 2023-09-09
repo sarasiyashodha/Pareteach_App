@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../Components/nav_bar.dart';
-import 'package:mini_project_mobile_app/Components/recommandations_tile.dart';
 
 class Recommendations extends StatefulWidget {
   const Recommendations({super.key});
@@ -26,27 +25,7 @@ class _RecommendationsState extends State<Recommendations> {
           ),
         ],
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 40.0,
-              ),
-              RecommendationsTile(),
-              SizedBox(
-                height: 20.0,
-              ),
-              RecommendationsTile(),
-              SizedBox(
-                height: 20.0,
-              ),
-              RecommendationsTile(),
-            ],
-          ),
-        ),
-      ),
+
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
