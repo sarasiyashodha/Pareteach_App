@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/nav_bar2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page7.dart';
+import 'setting_page2.dart';
+import 'setting_page8.dart';
 
 class SettingPage1 extends StatelessWidget {
   const SettingPage1({super.key});
@@ -20,10 +23,12 @@ class SettingPage1 extends StatelessWidget {
           ),
         ],
       ),
+
+
       body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
-          // Privacy and Security Text
+
           Row(
             children: [
               Text(
@@ -39,24 +44,34 @@ class SettingPage1 extends StatelessWidget {
 
           SizedBox(height: 20.0), 
 
-          Row(
-            children: [
-              Image.asset(
-                "Images/PrivacyAndSecurity.png",
-                width: 30.0, 
-                height: 30.0, 
-              ),
-              SizedBox(width: 8.0), 
-              Text(
-                "Privacy and Security",
-                style: TextStyle(
-                  fontSize: 16.0,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SettingPage2(), 
                 ),
-              ),
-            ],
+              );
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  "Images/PrivacyAndSecurity.png",
+                  width: 30.0,
+                  height: 30.0,
+                ),
+                SizedBox(width: 8.0),
+                Text(
+                  "Privacy and Security",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
+              ],
+            ),
           ),
 
           SizedBox(height: 35.0), 
+
 
           Row(
             children: [
@@ -73,7 +88,16 @@ class SettingPage1 extends StatelessWidget {
 
           SizedBox(height: 20.0), 
 
-          Row(
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SettingPage7(), 
+                ),
+              );
+            },
+
+          child:Row(
             children: [
               Image.asset(
                 "Images/Themes.png",
@@ -89,8 +113,10 @@ class SettingPage1 extends StatelessWidget {
               ),
             ],
           ),
+          ),
 
           SizedBox(height: 35.0), 
+
 
           Row(
             children: [
@@ -107,7 +133,16 @@ class SettingPage1 extends StatelessWidget {
 
           SizedBox(height: 20.0), 
 
-          Row(
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SettingPage8(), 
+                ),
+              );
+            },
+
+          child:Row(
             children: [
               Image.asset(
                 "Images/TermsOfUse.png",
@@ -122,6 +157,7 @@ class SettingPage1 extends StatelessWidget {
                 ),
               ),
             ],
+          ),
           ),
 
           SizedBox(height: 35.0), 
