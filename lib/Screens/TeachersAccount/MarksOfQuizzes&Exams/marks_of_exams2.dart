@@ -64,9 +64,9 @@ class _MarksOfExams2State extends State<MarksOfExams2> {
                             SizedBox(
                               height: 10.0,
                             ),
-                            TermTestMarks(),
-                            TermTestMarks(),
-                            TermTestMarks(),
+                            TermTestMarks(term: "First term",),
+                            TermTestMarks(term: "Second term",),
+                            TermTestMarks(term: "Third term",),
                           ],
                         ),
                       ),

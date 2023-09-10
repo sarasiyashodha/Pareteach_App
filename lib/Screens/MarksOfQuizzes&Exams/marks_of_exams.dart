@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/constants.dart';
+import 'package:mini_project_mobile_app/Components/grade.dart';
 import 'package:mini_project_mobile_app/Components/term_test_marks.dart';
 
 import '../../Components/nav_bar.dart';
@@ -33,7 +33,7 @@ class _MarksOfExamsState extends State<MarksOfExams> {
         child: Column(
           children: [
             const SizedBox(
-              height: 10.0,
+              height: 50.0,
             ),
             Center(
               child: SizedBox(
@@ -53,19 +53,13 @@ class _MarksOfExamsState extends State<MarksOfExams> {
                         padding: const EdgeInsets.all(12.0),
                         child: Column(
                           children: [
-                            Align(
-                              child: Text(
-                                "Grade 7",
-                                style: ksubTitleTextStyle,
-                              ),
-                              alignment: Alignment.topLeft,
-                            ),
+                            Grade(grade: "Grade 7",),
                             SizedBox(
                               height: 10.0,
                             ),
-                            TermTestMarks(),
-                            TermTestMarks(),
-                            TermTestMarks(),
+                            TermTestMarks(term: "First term",),
+                            TermTestMarks(term: "Second term",),
+                            TermTestMarks(term: "Third term",),
                           ],
                         ),
                       ),
@@ -92,3 +86,5 @@ class _MarksOfExamsState extends State<MarksOfExams> {
     );
   }
 }
+
+

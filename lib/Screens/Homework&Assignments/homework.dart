@@ -76,7 +76,7 @@ class _HomeworkState extends State<Homework> {
               ],
             ),
             const SizedBox(
-              height: 20.0,
+              height: 50.0,
             ),
             SizedBox(
               height: 450.0,
