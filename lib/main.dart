@@ -25,6 +25,15 @@ import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/updates2
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/notification2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/progress2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page1.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page10.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page2.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page3.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page4.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page5.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page6.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page7.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page8.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/setting%20pages/setting_page9.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teacher_profile.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/updates.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
@@ -97,6 +106,16 @@ class MyApp extends StatelessWidget {
         '/thirty_eight': (context) => AttendanceReport1(),
         '/thirty_nine': (context) => Recommendation(),
         '/fourty': (context) => SettingPage1(),
+        '/fourty_one': (context) => SettingPage2(),
+        '/fourty_two': (context) => SettingPage3(),
+        '/fourty_three': (context) => SettingPage4(),
+        '/fourty_four': (context) => SettingPage5(),
+        '/fourty_five': (context) => SettingPage6(),
+        '/fourty_six': (context) => SettingPage7(),
+        '/fourty_seven': (context) => SettingPage8(),
+        '/fourty_eight': (context) => SettingPage9(),
+        '/fourty_nine': (context) => SettingPage10(),
+      
 
       },
     );
