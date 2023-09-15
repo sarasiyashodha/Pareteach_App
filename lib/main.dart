@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/home_page.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/user_selection_page.dart';
 import 'package:mini_project_mobile_app/Screens/ParentAccount/OTP_verified.dart';
@@ -50,9 +52,11 @@ import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_OTP_ver
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_login_page.dart';
 
 
-
-
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
