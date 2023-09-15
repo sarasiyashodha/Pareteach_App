@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:869343011943:android:e7640fa6afe5ebc632e0c2",
+        "mobilesdk_app_id": "1:869343011943:android:eb0d8d36cf8fb76932e0c2",
         "android_client_info": {
-          "package_name": "lk.ce.pareteach"
+          "package_name": "com.example.mini_project_mobile_app"
         }
       },
       "oauth_client": [

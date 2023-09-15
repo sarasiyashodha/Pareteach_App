@@ -48,17 +48,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBE7UJx1vMpLtqqNcHmTh0ydbIbreTnbps',
-    appId: '1:869343011943:web:b38222a18663e1f332e0c2',
+    appId: '1:869343011943:web:56b2d4f1fdfb433e32e0c2',
     messagingSenderId: '869343011943',
     projectId: 'mini-project-mobile-app-b4724',
     authDomain: 'mini-project-mobile-app-b4724.firebaseapp.com',
     storageBucket: 'mini-project-mobile-app-b4724.appspot.com',
-    measurementId: 'G-W8SV3HYQF4',
+    measurementId: 'G-2DRS9CS64Z',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBjZo5SK5VDxloKPCilZaKS6bsKMG-XR4o',
-    appId: '1:869343011943:android:e7640fa6afe5ebc632e0c2',
+    appId: '1:869343011943:android:eb0d8d36cf8fb76932e0c2',
     messagingSenderId: '869343011943',
     projectId: 'mini-project-mobile-app-b4724',
     storageBucket: 'mini-project-mobile-app-b4724.appspot.com',
@@ -66,7 +66,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBR4LuaHKDeSEcYq7UIz-gLz7-AyDkQewQ',
-    appId: '1:869343011943:ios:c682517f64c4d67c32e0c2',
+    appId: '1:869343011943:ios:4fd17644d82bd47c32e0c2',
     messagingSenderId: '869343011943',
     projectId: 'mini-project-mobile-app-b4724',
     storageBucket: 'mini-project-mobile-app-b4724.appspot.com',
