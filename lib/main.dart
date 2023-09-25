@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
         '/twenty_one': (context) => Progress(),
         '/twenty_two': (context) => VerifyCode2(),
         '/twenty_three': (context) => VerifiedOTP2(),
-        '/twenty_four': (context) => LoginPage2(),
+        '/twenty_four': (context) => LoginPage2(toggle: () {}),
         '/twenty_five': (context) => Notifications2(),
         '/twenty_six': (context) => TeacherProfile(),
         '/twenty_seven': (context) => HomeworkAndAssignments2(),
