@@ -28,6 +28,12 @@ class NavBar extends StatelessWidget {
           ),
 
           ListTile(
+            leading: Icon(Icons.arrow_back_sharp),
+            title: Text("Logout"),
+            onTap: () => print('hello'),
+          ),
+
+          ListTile(
             leading: Icon(Icons.notifications),
             title: Text("Notifications"),
             onTap: () {
@@ -89,11 +95,7 @@ class NavBar extends StatelessWidget {
             onTap: () => print('hello'),
           ),
 
-          ListTile(
-            leading: Icon(Icons.arrow_back_sharp),
-            title: Text("Logout"),
-            onTap: () => print('hello'),
-          ),
+
           
           
         ],
