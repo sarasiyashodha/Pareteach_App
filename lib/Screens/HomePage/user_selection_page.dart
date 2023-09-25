@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_login_page.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/models/UserModel.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/wrapper.dart';
+import 'package:mini_project_mobile_app/Screens/services/auth.dart';
+import 'package:provider/provider.dart';
 import '../ParentAccount/login_page.dart';
 
 
@@ -20,16 +23,21 @@ class UserSelectionPage extends StatelessWidget {
             ),
             SizedBox(height: 52),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) {
-                        return LoginPage2();
-                      },
-                    ),
-                  );
-                },
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return StreamProvider<UserModel?>.value(
+                        initialData: UserModel(uid: ""),
+                        value: AuthServices().user,
+                        child: Wrapper(),
+                      );
+                    },
+                  ),
+                );
+              },
+
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFFDFEEEB),
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),

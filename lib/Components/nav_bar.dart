@@ -95,6 +95,7 @@ class NavBar extends StatelessWidget {
             onTap: () => print('hello'),
           ),
           
+          
         ],
       ),
     );

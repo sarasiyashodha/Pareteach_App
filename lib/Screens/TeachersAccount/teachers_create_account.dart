@@ -1,18 +1,47 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/create_account_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 
+
+import '../services/auth.dart';
+
 class CreateAccount2 extends StatefulWidget {
+  final Function toggle;
+
+  const CreateAccount2({super.key, required this.toggle});
+  
+
   @override
   _CreateAccount2State createState() => _CreateAccount2State();
 }
 
 class _CreateAccount2State extends State<CreateAccount2> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final _formKey = GlobalKey<FormState>();
+
+  String userName = "";
+  String email = "";
+  String userId = "";
+  String password = "";
+  String error = "";
+
   // Text editing controllers
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
   final userIDController = TextEditingController();
   final passwordController = TextEditingController();
+
+  Future<void> signInAnonymously(BuildContext context) async {
+    try {
+      UserCredential userCredential = await _auth.signInAnonymously();
+      String uid = userCredential.user!.uid;
+      print('Signed in with UID: $uid');
+      Navigator.pushNamed(context, '/twenty_five');
+    } catch (e) {
+      print('Error signing in: $e');
+    }
+  }
 
   bool isCheckedRememberMe = false;
   bool invisible = true;
@@ -52,53 +81,82 @@ class _CreateAccount2State extends State<CreateAccount2> {
 
                 const SizedBox(height: 30),
 
-                // User name
-                Container(
-                  height: 45,
-                  child: MyTextField(
-                    controller: usernameController,
-                    hintText: 'User name',
-                    obscureText: false,
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      
+                      MyTextField(
+                        validator: (val) => val?.isEmpty == true
+                            ? "Enter a valid User Name"
+                            : null,
+                        controller: usernameController,
+                        hintText: 'User name',
+                        obscureText: false,
+                        onChanged: (val) {
+                          setState(() {
+                            userName = val;
+                          });
+                        },
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      MyTextField(
+                        validator: (val) =>
+                            val?.isEmpty == true ? "Enter a valid Email" : null,
+                        controller: emailController,
+                        hintText: 'Email',
+                        obscureText: false,
+                        onChanged: (val) {
+                          setState(() {
+                            email = val;
+                          });
+                        },
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      MyTextField(
+                        validator: (val) => val?.isEmpty == true
+                            ? "Enter a valid User ID"
+                            : null,
+                        controller: userIDController,
+                        hintText: 'User ID',
+                        obscureText: false,
+                        onChanged: (val) {
+                          setState(() {
+                            userId = val;
+                          });
+                        },
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      MyTextField(
+                        validator: (val) =>
+                            val!.length < 6 ? "Enter a valid password" : null,
+                        controller: passwordController,
+                        hintText: 'Password',
+                        obscureText: true,
+                        onChanged: (val) {
+                          setState(() {
+                            password = val;
+                          });
+                        },
+                      ),
+
+                    ],
                   ),
                 ),
-
-                const SizedBox(height: 20),
-
-                // Email
-                Container(
-                  height: 45,
-                  child: MyTextField(
-                    controller: emailController,
-                    hintText: 'Email',
-                    obscureText: false,
-                  ),
-                ),
-
-                const SizedBox(height: 20),
-
-                // User ID
-                Container(
-                  height: 45,
-                  child: MyTextField(
-                    controller: userIDController,
-                    hintText: 'User ID',
-                    obscureText: false,
-                  ),
-                ),
-
-                const SizedBox(height: 20),
-
-                // Password
-                Container(
-                  height: 45,
-                  child: MyTextField(
-                    controller: passwordController,
-                    hintText: 'Password',
-                    obscureText: true,
-                  ),
-                ),
-
+                
                 const SizedBox(height: 10),
+
+                //error text
+                Text(
+                  error,
+                  style: TextStyle(color: Colors.red),
+                ),
 
                 // Checkbox for agreeing to terms
                 Row(
@@ -119,12 +177,18 @@ class _CreateAccount2State extends State<CreateAccount2> {
                 const SizedBox(height: 10),
 
                 // create account button
-                CreateAccountButton(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/seventeen');
+                CreateAccountButton(onTap: () async {
+                  dynamic result = await AuthServices().registerWithEmailAndPassword(
+                      email: email, 
+                      password: password);
+
+                  if (result == null) {
+                    //error
+                    setState(() {
+                      error = "Please enter a valid email!";
+                    });
                   }
-                  
-                ),
+                }),
 
                 const SizedBox(height: 5),
 
@@ -140,7 +204,7 @@ class _CreateAccount2State extends State<CreateAccount2> {
 
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/seventeen');
+                    widget.toggle();
                   },
                   child: Text(
                     "Sign In",
@@ -151,8 +215,6 @@ class _CreateAccount2State extends State<CreateAccount2> {
                     ),
                   ),
                 ),
-
-
               ],
             ),
           ),
