@@ -1,4 +1,5 @@
 class UserModel {
   final String uid;
-  UserModel({required this.uid});
+  final String userRole;
+  UserModel({required this.uid, required this.userRole});
 }

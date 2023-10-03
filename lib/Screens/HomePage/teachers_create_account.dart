@@ -4,6 +4,7 @@ import 'package:mini_project_mobile_app/Components/create_account_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 
 
+import '../../Components/dropdown_field.dart';
 import '../services/auth.dart';
 
 class CreateAccount2 extends StatefulWidget {
@@ -25,6 +26,7 @@ class _CreateAccount2State extends State<CreateAccount2> {
   String userId = "";
   String password = "";
   String error = "";
+  String userRole = 'teacher';
 
   // Text editing controllers
   final usernameController = TextEditingController();
@@ -47,7 +49,7 @@ class _CreateAccount2State extends State<CreateAccount2> {
   bool invisible = true;
 
   // Sign user in method
-  void accountcreate() {}
+
 
   @override
   Widget build(BuildContext context) {
@@ -152,6 +154,17 @@ class _CreateAccount2State extends State<CreateAccount2> {
                 
                 const SizedBox(height: 10),
 
+                MyDropdownField(
+                  // Dropdown field for selecting user role (teacher/parent)
+                  value: userRole,
+                  items: ['teacher', 'parent'],
+                  onChanged: (selectedRole) {
+                    setState(() {
+                      userRole = selectedRole!;
+                    });
+                  },
+                ),
+
                 //error text
                 Text(
                   error,
@@ -178,15 +191,22 @@ class _CreateAccount2State extends State<CreateAccount2> {
 
                 // create account button
                 CreateAccountButton(onTap: () async {
-                  dynamic result = await AuthServices().registerWithEmailAndPassword(
-                      email: email, 
-                      password: password);
+                  if (_formKey.currentState?.validate() ?? false) {
+                    dynamic result = await AuthServices().registerWithEmailAndPassword(
+                      email: email,
+                      password: password,
+                      userRole: userRole, // Pass selected user role to the registration method
+                    );
 
-                  if (result == null) {
-                    //error
-                    setState(() {
-                      error = "Please enter a valid email!";
-                    });
+                    if (result == null) {
+                      setState(() {
+                        error = "Please enter valid information.";
+                      });
+                    } else {
+                      // Registration successful, handle the result if needed
+                      // For example, navigate to the home screen
+                      // Navigator.pushNamed(context, '/home');
+                    }
                   }
                 }),
 
@@ -205,6 +225,7 @@ class _CreateAccount2State extends State<CreateAccount2> {
                 GestureDetector(
                   onTap: () {
                     widget.toggle();
+
                   },
                   child: Text(
                     "Sign In",

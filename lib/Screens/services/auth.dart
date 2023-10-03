@@ -6,13 +6,15 @@ class AuthServices {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   //create a user from firebase user with uid
-  UserModel? _userWithFirebaseUserUid(User? user) {
-    return user != null ? UserModel(uid: user.uid) : null;
+  UserModel? _userWithFirebaseUserUid(User? user, String userRole) {
+    return user != null ? UserModel(uid: user.uid, userRole: userRole) : null;
   }
 
   //create the stream for checking the auth changes in the user
   Stream<UserModel?> get user {
-    return _auth.authStateChanges().map(_userWithFirebaseUserUid);
+    return _auth.authStateChanges().map((user) {
+      return _userWithFirebaseUserUid(user, 'teacher'); // Default user role is 'teacher'
+    });
   }
 
   //sign in anonymous
@@ -20,7 +22,7 @@ class AuthServices {
     try {
       UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
-      return _userWithFirebaseUserUid(user);
+      return _userWithFirebaseUserUid(user, 'teacher');
     } catch (err) {
       print(err.toString());
       return null;
@@ -29,12 +31,12 @@ class AuthServices {
 
   //register using email and password
   Future registerWithEmailAndPassword(
-      {required String email, required String password}) async {
+      {required String email, required String password, required String userRole,}) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      return _userWithFirebaseUserUid(user);
+      return _userWithFirebaseUserUid(user, userRole);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         print('The email address is already in use by another account.');
@@ -54,7 +56,7 @@ class AuthServices {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      return _userWithFirebaseUserUid(user);
+      return _userWithFirebaseUserUid(user, 'teacher');
     } catch (err) {
       print(err.toString());
       return null;

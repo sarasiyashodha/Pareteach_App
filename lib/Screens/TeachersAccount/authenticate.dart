@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_create_account.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_login_page.dart';
+import 'package:mini_project_mobile_app/Screens/HomePage/teachers_create_account.dart';
+import 'package:mini_project_mobile_app/Screens/HomePage/teachers_login_page.dart';
 
 class Authenticate extends StatefulWidget {
   const Authenticate({super.key});

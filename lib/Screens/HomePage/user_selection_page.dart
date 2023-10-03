@@ -23,20 +23,21 @@ class UserSelectionPage extends StatelessWidget {
             ),
             SizedBox(height: 52),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return StreamProvider<UserModel?>.value(
-                        initialData: UserModel(uid: ""),
-                        value: AuthServices().user,
-                        child: Wrapper(),
-                      );
-                    },
-                  ),
-                );
-              },
+              // onPressed: () {
+              //   Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (BuildContext context) {
+              //         return StreamProvider<UserModel?>.value(
+              //           initialData: UserModel(uid: ""),
+              //           value: AuthServices().user,
+              //           child: Wrapper(),
+              //         );
+              //       },
+              //     ),
+              //   );
+              // },
+              onPressed: (){},
 
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFFDFEEEB),

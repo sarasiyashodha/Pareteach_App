@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mini_project_mobile_app/Components/my_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 import 'package:mini_project_mobile_app/Components/square_tile.dart';
 import 'package:mini_project_mobile_app/Screens/services/auth.dart';
-import 'teachers_forgot_password.dart';
+import '../TeachersAccount/teachers_forgot_password.dart';
 
 class LoginPage2 extends StatefulWidget {
   //function
@@ -18,6 +19,8 @@ class LoginPage2 extends StatefulWidget {
 
 class _LoginPage2State extends State<LoginPage2> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  User? user = FirebaseAuth.instance.currentUser;
+
   final _formKey = GlobalKey<FormState>();
   String email = "";
   String password = "";
@@ -136,6 +139,14 @@ class _LoginPage2State extends State<LoginPage2> {
                         setState(() {
                           error = "Invalid credentials. Please try again.";
                         });
+                      }else {
+                        String userRole = result.userRole;
+                        // Navigate based on user role (teacher or parent)
+                        if (userRole == 'teacher') {
+                          Navigator.pushNamed(context, '/nineteen');
+                        } else {
+                          Navigator.pushNamed(context, '/twenty_five');
+                        }
                       }
                     }
                   },

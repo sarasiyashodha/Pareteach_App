@@ -49,7 +49,7 @@ import 'package:mini_project_mobile_app/Screens/ParentAccount/recommandations.da
 import 'package:mini_project_mobile_app/Screens/Progress.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_verify_code.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_OTP_verified.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_login_page.dart';
+import 'package:mini_project_mobile_app/Screens/HomePage/teachers_login_page.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
