@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/services/auth.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/user_provider.dart';
 
 class NavBar2 extends StatelessWidget {
   const NavBar2({super.key});
@@ -7,6 +10,7 @@ class NavBar2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AuthServices _auth = AuthServices();
+    var userProvider = Provider.of<UserProvider>(context, listen: true);
 
     return Drawer(
       child: ListView(
@@ -16,8 +20,8 @@ class NavBar2 extends StatelessWidget {
             decoration: BoxDecoration(
               color: Color(0XFF305D62),
             ),
-            accountName: Text("Jameson Smith"),
-            accountEmail: Text("jamesonsmith@gmail.com"),
+            accountName: Text(userProvider.userName ?? ""),
+            accountEmail: Text(userProvider.userEmail ?? ""),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage(
                 'Images/TeachersProfile.jpeg',
@@ -43,11 +47,6 @@ class NavBar2 extends StatelessWidget {
             },
           ),
 
-          ListTile(
-            leading: Icon(Icons.arrow_back_sharp),
-            title: Text("Logout"),
-            onTap: () => print('hello'),
-          ),
 
           ListTile(
             leading: Icon(Icons.notifications),

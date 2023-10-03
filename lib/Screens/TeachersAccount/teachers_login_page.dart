@@ -4,6 +4,8 @@ import 'package:mini_project_mobile_app/Components/my_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 import 'package:mini_project_mobile_app/Components/square_tile.dart';
 import 'package:mini_project_mobile_app/Screens/services/auth.dart';
+import 'package:provider/provider.dart';
+import '../../providers/user_provider.dart';
 import 'teachers_forgot_password.dart';
 
 class LoginPage2 extends StatefulWidget {
@@ -136,6 +138,10 @@ class _LoginPage2State extends State<LoginPage2> {
                         setState(() {
                           error = "Invalid credentials. Please try again.";
                         });
+                      }else {
+                        // Set user details when successfully logged in
+                        Provider.of<UserProvider>(context, listen: false).setUserDetails("User", email);
+                        Navigator.pushNamed(context, '/twenty_five'); // Navigate to the home screen
                       }
                     }
                   },
