@@ -34,6 +34,19 @@ class AuthServices {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
+      String? userId = user?.uid;
+
+      await _firestore.collection('users').doc(userId).set({
+        'role': selectedRole == UserRole.teacher ? 'teacher' : 'parent',
+        'username': username,
+        'userID': userID,
+        'email': email,
+      });
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => selectedRole == UserRole.teacher ? Notifications2() : Notifications()),
+      );
       return _userWithFirebaseUserUid(user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
