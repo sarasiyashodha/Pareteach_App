@@ -141,6 +141,7 @@ class _LoginPage2State extends State<LoginPage2> {
                       }else {
                         // Check the user's role and navigate accordingly
                         String? role = Provider.of<UserProvider>(context, listen: false).userRole;
+                        print('User role: $role');
                         if (role == 'Teacher') {
                           Navigator.pushNamed(context, '/twenty_five'); // Navigate to teacher home screen
                         } else if (role == 'Parent') {
