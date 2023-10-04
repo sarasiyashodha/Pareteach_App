@@ -233,8 +233,3 @@ class _TeacherProfileState extends State<TeacherProfile> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: TeacherProfile(),
-  ));
-}

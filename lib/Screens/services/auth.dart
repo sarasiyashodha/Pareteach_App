@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/models/UserModel.dart';
@@ -8,6 +9,7 @@ import '../../providers/user_provider.dart';
 class AuthServices {
   //firebase instance
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   //create a user from firebase user with uid
   UserModel? _userWithFirebaseUserUid(User? user) {
@@ -35,13 +37,22 @@ class AuthServices {
 
   //register using email and password
   Future registerWithEmailAndPassword(
-      {required BuildContext context, required String email, required String password}) async {
+      {required BuildContext context, required String username, required String email, required String password}) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      Provider.of<UserProvider>(context, listen: false).setUserDetails(email, password);
+      Provider.of<UserProvider>(context, listen: false).setUserDetails(username, email);
       Navigator.pushNamed(context, '/twenty_five');
+      if (user != null) {
+        await _firestore.collection('users').doc(user.uid).set({
+          'username': username,
+          'email': email,
+          // add other fields as needed
+        });
+      }
+
+      return user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         print('The email address is already in use by another account.');
