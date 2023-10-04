@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/user_selection_page.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';// Import your user_selection_page.dart
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_login_page.dart';// Import your user_selection_page.dart
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,10 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // Add a delay and navigate to the UserSelectionPage
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => UserSelectionPage()),
-      );
+      Navigator.pushNamed(context, '/twenty_four');
     });
   }
 

@@ -43,7 +43,7 @@ class NavBar2 extends StatelessWidget {
             title: Text("Logout"),
             onTap: () async {
               await _auth.signOut();
-              Navigator.pushNamed(context, '/two');
+              Navigator.pushNamed(context, '/twenty_four');
             },
           ),
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/teachers_create_account.dart';
 import 'package:mini_project_mobile_app/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
@@ -123,6 +124,7 @@ class MyApp extends StatelessWidget {
         '/fourty_seven': (context) => SettingPage8(),
         '/fourty_eight': (context) => SettingPage9(),
         '/fourty_nine': (context) => SettingPage10(),
+        '/fifty': (context) => CreateAccount2(toggle: (){})
       
 
       },

@@ -27,7 +27,7 @@ class AuthServices {
       UserCredential userCredential = await _auth.signInAnonymously();
       String uid = userCredential.user!.uid;
       print('Signed in with UID: $uid');
-      Provider.of<UserProvider>(context, listen: false).setUserDetails("Anonymous", "anonymous@example.com");
+      Provider.of<UserProvider>(context, listen: false).setUserDetails("Anonymous", "anonymous@example.com", "");
       Navigator.pushNamed(context, '/twenty_five');
     } catch (err) {
       print(err.toString());
@@ -37,19 +37,23 @@ class AuthServices {
 
   //register using email and password
   Future registerWithEmailAndPassword(
-      {required BuildContext context, required String username, required String email, required String password}) async {
+      {required BuildContext context, required String username, required String email, required String password, required String selectedRole}) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      Provider.of<UserProvider>(context, listen: false).setUserDetails(username, email);
-      Navigator.pushNamed(context, '/twenty_five');
       if (user != null) {
         await _firestore.collection('users').doc(user.uid).set({
           'username': username,
           'email': email,
-          // add other fields as needed
+          'role': selectedRole,
+          // Add other fields as needed
         });
+
+        Provider.of<UserProvider>(context, listen: false).setUserDetails(username, email, selectedRole);
+
+
+
       }
 
       return user;
@@ -67,12 +71,24 @@ class AuthServices {
   }
 
   //signin using userId and password
-  Future signInUsingEmailAndPassword(String email, String password) async {
+  Future signInUsingEmailAndPassword(BuildContext context, String email, String password) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      return _userWithFirebaseUserUid(user);
+      if (user != null) {
+        // Retrieve user data from Firestore
+        DocumentSnapshot userData =
+        await _firestore.collection('users').doc(user.uid).get();
+
+        // Extract the user role from Firestore data
+        String role = userData['role'];
+
+        // Set user details including the role when successfully logged in
+        Provider.of<UserProvider>(context, listen: false)
+            .setUserDetails("user", email, role);
+        return _userWithFirebaseUserUid(user);
+      }
     } catch (err) {
       print(err.toString());
       return null;

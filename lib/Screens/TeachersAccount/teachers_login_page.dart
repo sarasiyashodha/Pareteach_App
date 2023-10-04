@@ -133,15 +133,21 @@ class _LoginPage2State extends State<LoginPage2> {
                   onTap: () async {
                     if (_formKey.currentState?.validate() ?? false) {
                       dynamic result = await AuthServices()
-                          .signInUsingEmailAndPassword(email, password);
+                          .signInUsingEmailAndPassword(context, email, password);
                       if (result == null) {
                         setState(() {
                           error = "Invalid credentials. Please try again.";
                         });
                       }else {
-                        // Set user details when successfully logged in
-                        Provider.of<UserProvider>(context, listen: false).setUserDetails("User", email);
-                        Navigator.pushNamed(context, '/twenty_five'); // Navigate to the home screen
+                        // Check the user's role and navigate accordingly
+                        String? role = Provider.of<UserProvider>(context, listen: false).userRole;
+                        if (role == 'Teacher') {
+                          Navigator.pushNamed(context, '/twenty_five'); // Navigate to teacher home screen
+                        } else if (role == 'Parent') {
+                          Navigator.pushNamed(context, '/nineteen'); // Navigate to parent home screen
+                        } else {
+                          // Handle other roles or scenarios as needed
+                        }
                       }
                     }
                   },
@@ -200,6 +206,7 @@ class _LoginPage2State extends State<LoginPage2> {
                     GestureDetector(
                       onTap: () {
                         widget.toggle();
+                        Navigator.pushNamed(context, '/fifty');
                       },
                       child: Text(
                         'Register now',

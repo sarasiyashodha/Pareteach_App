@@ -30,7 +30,9 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.arrow_back_sharp),
             title: Text("Logout"),
-            onTap: () => print('hello'),
+            onTap: () {
+              Navigator.pushNamed(context, '/twenty_four');
+            },
           ),
 
           ListTile(
