@@ -14,7 +14,7 @@ class UserProvider with ChangeNotifier {
   void setUserDetails(String name, String email, String userRole) {
     _userName = name;
     _userEmail = email;
-    _userRole = userRole!;
+    _userRole = userRole;
     notifyListeners();
   }
 
