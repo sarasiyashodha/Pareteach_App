@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 import 'package:mini_project_mobile_app/Components/recommandations_tile.dart';
 
-class Recommendation extends StatefulWidget {
-  const Recommendation({super.key});
+class Recommendations2 extends StatefulWidget {
+  const Recommendations2({super.key});
 
   @override
-  State<Recommendation> createState() => _RecommendationState();
+  State<Recommendations2> createState() => _Recommendations2State();
 }
 
-class _RecommendationState extends State<Recommendation> {
+class _Recommendations2State extends State<Recommendations2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

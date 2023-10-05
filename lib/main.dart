@@ -22,7 +22,7 @@ import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignm
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_exams2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_quizzes2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/MarksOfQuizzes&Exams/marks_of_quizzes_&_exams2.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/Reccomandations.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/recommendations2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/events2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/extra_classes2.dart';
 import 'package:mini_project_mobile_app/Screens/TeachersAccount/Updates/holidays2.dart';
@@ -113,7 +113,7 @@ class MyApp extends StatelessWidget {
         '/thirty_six': (context) => ExtraClasses2(),
         '/thirty_seven': (context) => Holidays2(),
         '/thirty_eight': (context) => AttendanceReport1(),
-        '/thirty_nine': (context) => Recommendation(),
+        '/thirty_nine': (context) => Recommendations2(),
         '/fourty': (context) => SettingPage1(),
         '/fourty_one': (context) => SettingPage2(),
         '/fourty_two': (context) => SettingPage3(),
