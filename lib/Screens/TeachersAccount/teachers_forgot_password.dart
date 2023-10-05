@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/continue_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
@@ -10,6 +12,18 @@ class ForgotPassword2 extends StatefulWidget {
 class _ForgotPassword2State extends State<ForgotPassword2> {
   final TextEditingController emailController = TextEditingController();
   String email = '';
+
+  Future<void> sendPasswordResetEmail() async {
+    try {
+      await Firebase.initializeApp(); 
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      // Handle success
+      print('Password reset email sent to $email');
+    } catch (e) {
+      // Handle error
+      print('Failed to send password reset email: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +80,15 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                     });
                   },
                 ),
+                
                 const SizedBox(height: 40),
+                
                 ContinueButton(
                   onTap: () {
-                    Navigator.pushNamed(context, '/twenty_two');
+                    sendPasswordResetEmail().then((value) => Navigator.of(context).pop());
                   },
                 ),
+                
               ],
             ),
           ),
@@ -79,4 +96,12 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
       ),
     );
   }
+}
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MaterialApp(
+    home: ForgotPassword2(),
+  ));
 }
