@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/updates_tile.dart';
 
-import '../../Components/nav_bar.dart';
+import '../../Components/nav_bar1.dart';
 
 class Updates extends StatelessWidget {
   const Updates({super.key});

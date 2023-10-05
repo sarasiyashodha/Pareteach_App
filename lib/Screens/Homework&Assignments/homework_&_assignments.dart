@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../Components/nav_bar.dart';
+import '../../Components/nav_bar1.dart';
 import '../../constants.dart';
 
 class HomeworkAndAssignments extends StatelessWidget {

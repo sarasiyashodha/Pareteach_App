@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/quiz_marks.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/nav_bar2.dart';
+import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 
 
 
@@ -10,7 +10,7 @@ class MarksOfQuizzes2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar2(),
+      drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
         title: Text("Marks of Quizzes"),

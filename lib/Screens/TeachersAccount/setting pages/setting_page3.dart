@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/change_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/nav_bar2.dart';
+import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 
 
 class SettingPage3 extends StatelessWidget {
@@ -11,7 +11,7 @@ class SettingPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar2(),
+      drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
         title: Text("Change Password"),

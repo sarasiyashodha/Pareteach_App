@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/classwork_tile.dart';
 
-import '../../Components/nav_bar.dart';
+import '../../Components/nav_bar1.dart';
 
 class MarksOfQuizzesAndExams extends StatelessWidget {
   const MarksOfQuizzesAndExams({super.key});

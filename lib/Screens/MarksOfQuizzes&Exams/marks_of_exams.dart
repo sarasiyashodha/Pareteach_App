@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/grade.dart';
 import 'package:mini_project_mobile_app/Components/term_test_marks.dart';
 
-import '../../Components/nav_bar.dart';
+import '../../Components/nav_bar1.dart';
 
 class MarksOfExams extends StatefulWidget {
   const MarksOfExams({super.key});

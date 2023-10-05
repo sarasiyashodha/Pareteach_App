@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/nav_bar2.dart';
+import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 
 class Notifications2 extends StatefulWidget {
   const Notifications2({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class _Notifications2State extends State<Notifications2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar2(),
+      drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
         title: Text("Notifications"),
