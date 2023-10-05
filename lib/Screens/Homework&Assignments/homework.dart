@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/constants.dart';
 import 'package:mini_project_mobile_app/lists.dart';
 
-import '../../Components/nav_bar.dart';
+import '../../Components/nav_bar1.dart';
 
 class Homework extends StatefulWidget {
   const Homework({super.key});

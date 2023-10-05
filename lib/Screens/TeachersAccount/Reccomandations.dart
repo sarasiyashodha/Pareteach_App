@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/nav_bar2.dart';
+import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 import 'package:mini_project_mobile_app/Components/recommandations_tile.dart';
 
 class Recommendation extends StatefulWidget {
@@ -13,7 +13,7 @@ class _RecommendationState extends State<Recommendation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar2(),
+      drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Color(0xFF305D62),
         title: Text("Recommendations"),

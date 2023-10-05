@@ -4,7 +4,10 @@ import 'package:mini_project_mobile_app/Components/create_account_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 
 
+import '../../Components/dropdownmenu.dart';
 import '../services/auth.dart';
+
+
 
 class CreateAccount2 extends StatefulWidget {
   final Function toggle;
@@ -24,6 +27,7 @@ class _CreateAccount2State extends State<CreateAccount2> {
   String email = "";
   String userId = "";
   String password = "";
+  String selectedRole = "Teacher";
   String error = "";
 
   // Text editing controllers
@@ -146,6 +150,18 @@ class _CreateAccount2State extends State<CreateAccount2> {
                         },
                       ),
 
+                      MyDropdownField(
+                        selectedValue: selectedRole,
+                        hintText: 'Select Role',
+                        items: ['Teacher', 'Parent'],
+                        onChanged: (selectedValue) {
+                          setState(() {
+                            selectedRole = selectedValue!;
+                          });
+                        },
+                      ),
+
+
                     ],
                   ),
                 ),
@@ -178,14 +194,23 @@ class _CreateAccount2State extends State<CreateAccount2> {
 
                 // create account button
                 CreateAccountButton(onTap: () async {
-                  dynamic result = await AuthServices().registerWithEmailAndPassword(
+                  dynamic result = await AuthServices().registerWithEmailAndPassword(context: context, username: userName,
                       email: email, 
-                      password: password);
+                      password: password, selectedRole: selectedRole);
 
-                  if (result == null) {
-                    //error
+                  if (result != null) {
+                    // User successfully registered, navigate based on role
+                    if (selectedRole == 'Teacher') {
+                      Navigator.pushNamed(context, '/twenty_five'); // Navigate to teacher home screen
+                    } else if (selectedRole == 'Parent') {
+                      Navigator.pushNamed(context, '/nineteen'); // Navigate to parent home screen
+                    } else {
+                      // Handle other roles or scenarios as needed
+                    }
+                  } else {
+                    // Registration failed, show error message
                     setState(() {
-                      error = "Please enter a valid email!";
+                      error = "Registration failed. Please try again.";
                     });
                   }
                 }),

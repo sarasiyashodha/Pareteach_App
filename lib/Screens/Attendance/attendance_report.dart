@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-import '../../Components/nav_bar.dart';
+import '../../Components/nav_bar1.dart';
 
 class AttendanceReport extends StatefulWidget {
   const AttendanceReport({super.key});

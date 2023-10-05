@@ -4,6 +4,8 @@ import 'package:mini_project_mobile_app/Components/my_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 import 'package:mini_project_mobile_app/Components/square_tile.dart';
 import 'package:mini_project_mobile_app/Screens/services/auth.dart';
+import 'package:provider/provider.dart';
+import '../../providers/user_provider.dart';
 import 'teachers_forgot_password.dart';
 
 class LoginPage2 extends StatefulWidget {
@@ -131,11 +133,22 @@ class _LoginPage2State extends State<LoginPage2> {
                   onTap: () async {
                     if (_formKey.currentState?.validate() ?? false) {
                       dynamic result = await AuthServices()
-                          .signInUsingEmailAndPassword(email, password);
+                          .signInUsingEmailAndPassword(context, "user", email, password, );
                       if (result == null) {
                         setState(() {
                           error = "Invalid credentials. Please try again.";
                         });
+                      }else {
+                        // Check the user's role and navigate accordingly
+                        String? role = Provider.of<UserProvider>(context, listen: false).userRole;
+                        print('User role: $role');
+                        if (role == 'Teacher') {
+                          Navigator.pushNamed(context, '/twenty_five'); // Navigate to teacher home screen
+                        } else if (role == 'Parent') {
+                          Navigator.pushNamed(context, '/nineteen'); // Navigate to parent home screen
+                        } else {
+                          // Handle other roles or scenarios as needed
+                        }
                       }
                     }
                   },
@@ -194,6 +207,7 @@ class _LoginPage2State extends State<LoginPage2> {
                     GestureDetector(
                       onTap: () {
                         widget.toggle();
+                        Navigator.pushNamed(context, '/fifty');
                       },
                       child: Text(
                         'Register now',
