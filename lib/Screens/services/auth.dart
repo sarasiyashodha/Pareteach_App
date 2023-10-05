@@ -42,6 +42,8 @@ class AuthServices {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
+
+
       if (user != null) {
         await _firestore.collection('users').doc(user.uid).set({
           'username': username,
@@ -57,6 +59,7 @@ class AuthServices {
       }
 
       return user;
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         print('The email address is already in use by another account.');
