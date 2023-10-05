@@ -71,7 +71,7 @@ class AuthServices {
   }
 
   //signin using userId and password
-  Future signInUsingEmailAndPassword(BuildContext context, String email, String password) async {
+  Future signInUsingEmailAndPassword(BuildContext context, String username,String email, String password) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -86,7 +86,7 @@ class AuthServices {
 
         // Set user details including the role when successfully logged in
         Provider.of<UserProvider>(context, listen: false)
-            .setUserDetails("user", email, role);
+            .setUserDetails(username, email, role);
         return _userWithFirebaseUserUid(user);
       }
     } catch (err) {

@@ -133,7 +133,7 @@ class _LoginPage2State extends State<LoginPage2> {
                   onTap: () async {
                     if (_formKey.currentState?.validate() ?? false) {
                       dynamic result = await AuthServices()
-                          .signInUsingEmailAndPassword(context, email, password);
+                          .signInUsingEmailAndPassword(context, "user", email, password, );
                       if (result == null) {
                         setState(() {
                           error = "Invalid credentials. Please try again.";
