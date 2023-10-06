@@ -230,6 +230,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 GestureDetector(
                   onTap: () {
                     widget.toggle();
+                    Navigator.pushNamed(context, '/three');
                   },
                   child: Text(
                     "Sign In",
