@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/nav_bar1.dart';
+import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 
 class Progress extends StatefulWidget {
   const Progress({Key? key}) : super(key: key);

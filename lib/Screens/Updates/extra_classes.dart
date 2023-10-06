@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../Components/nav_bar1.dart';
+import '../../Components/nav_bar.dart';
 
 class ExtraClasses extends StatefulWidget {
   const ExtraClasses({super.key});

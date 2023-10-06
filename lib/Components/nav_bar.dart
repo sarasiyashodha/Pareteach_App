@@ -34,7 +34,7 @@ class NavBar extends StatelessWidget {
             leading: Icon(Icons.person),
             title: Text("Profile"),
             onTap: () {
-              Navigator.pushNamed(context, '/twenty_six');
+              Navigator.pushNamed(context, '/eight');
             },
           ),
 
@@ -43,7 +43,7 @@ class NavBar extends StatelessWidget {
             title: Text("Logout"),
             onTap: () async {
               await _auth.signOut();
-              Navigator.pushNamed(context, '/twenty_four');
+              Navigator.pushNamed(context, '/three');
             },
           ),
 
@@ -53,9 +53,9 @@ class NavBar extends StatelessWidget {
             onTap: () {
               String? userRole = Provider.of<UserProvider>(context, listen: false).userRole;
               if (userRole == 'Teacher') {
-                Navigator.pushNamed(context, '/twenty_five');
+                Navigator.pushNamed(context, '/twenty_three');
               } else if (userRole == 'Parent') {
-                Navigator.pushNamed(context, '/nineteen');
+                Navigator.pushNamed(context, '/twenty');
               } else {
                 // Handle other roles or scenarios as needed
               }
@@ -68,9 +68,9 @@ class NavBar extends StatelessWidget {
             onTap: () {
               String? userRole = Provider.of<UserProvider>(context, listen: false).userRole;
               if (userRole == 'Teacher') {
-                Navigator.pushNamed(context, '/twenty_seven');
+                Navigator.pushNamed(context, '/twenty_four');
               } else if (userRole == 'Parent') {
-                Navigator.pushNamed(context, '/four');
+                Navigator.pushNamed(context, '/nine');
               } else {
                 // Handle other roles or scenarios as needed
               }
@@ -83,9 +83,9 @@ class NavBar extends StatelessWidget {
             onTap: () {
               String? userRole = Provider.of<UserProvider>(context, listen: false).userRole;
               if (userRole == 'Teacher') {
-                Navigator.pushNamed(context, '/thirty');
+                Navigator.pushNamed(context, '/twenty_seven');
               } else if (userRole == 'Parent') {
-                Navigator.pushNamed(context, '/seven');
+                Navigator.pushNamed(context, '/twelve');
               } else {
                 // Handle other roles or scenarios as needed
               }
@@ -96,7 +96,7 @@ class NavBar extends StatelessWidget {
             leading: Icon(Icons.stacked_line_chart_sharp),
             title: Text("Progress"),
             onTap: () {
-              Navigator.pushNamed(context, '/thirty_three');
+              Navigator.pushNamed(context, '/twenty_two');
             },
           ),
 
@@ -104,7 +104,7 @@ class NavBar extends StatelessWidget {
             leading: Icon(Icons.calendar_month_outlined),
             title: Text("Updates"),
             onTap: () {
-              Navigator.pushNamed(context, '/thirty_four');
+              Navigator.pushNamed(context, '/fifteen');
             },
           ),
 
@@ -112,7 +112,14 @@ class NavBar extends StatelessWidget {
             leading: Icon(Icons.check_circle_sharp),
             title: Text("Attendance"),
             onTap: () {
-              Navigator.pushNamed(context, '/thirty_eight');
+              String? userRole = Provider.of<UserProvider>(context, listen: false).userRole;
+              if (userRole == 'Teacher') {
+                Navigator.pushNamed(context, '/thirty_one');
+              } else if (userRole == 'Parent') {
+                Navigator.pushNamed(context, '/thirty');
+              } else {
+                // Handle other roles or scenarios as needed
+              }
             },
           ),
 
@@ -122,9 +129,9 @@ class NavBar extends StatelessWidget {
             onTap: () {
               String? userRole = Provider.of<UserProvider>(context, listen: false).userRole;
               if (userRole == 'Teacher') {
-                Navigator.pushNamed(context, '/thirty_nine');
+                Navigator.pushNamed(context, '/thirty_two');
               } else if (userRole == 'Parent') {
-                Navigator.pushNamed(context, '/twenty');
+                Navigator.pushNamed(context, '/twenty_one');
               } else {
                 // Handle other roles or scenarios as needed
               }
@@ -135,7 +142,7 @@ class NavBar extends StatelessWidget {
             leading: Icon(Icons.settings),
             title: Text("Settings"),
             onTap: () {
-              Navigator.pushNamed(context, '/fourty');
+              Navigator.pushNamed(context, '/thirty_three');
             },
           ),
 

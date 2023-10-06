@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/models/UserModel.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/wrapper.dart';
+import 'package:mini_project_mobile_app/models/UserModel.dart';
+import 'package:mini_project_mobile_app/wrapper.dart';
 import 'package:mini_project_mobile_app/Screens/services/auth.dart';
 import 'package:provider/provider.dart';
-import '../ParentAccount/login_page.dart';
+import '../account/login_page.dart';
 
 
 
@@ -64,7 +64,7 @@ class UserSelectionPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (BuildContext context) {
-                        return LoginPage();
+                        return LoginPage(toggle: (){},);
                       },
                     ),
                   );

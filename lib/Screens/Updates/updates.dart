@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/updates_tile.dart';
 
-import '../../Components/nav_bar1.dart';
+import '../../Components/nav_bar.dart';
 
 class Updates extends StatelessWidget {
   const Updates({super.key});
@@ -30,7 +30,7 @@ class Updates extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/eleven');
+                  Navigator.pushNamed(context, '/sixteen');
                 },
                 child: UpdatesTile(title: "Events", image: AssetImage('Images/events.png')),
               ),
@@ -39,7 +39,7 @@ class Updates extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/twelve');
+                  Navigator.pushNamed(context, '/seventeen');
                 },
                 child: UpdatesTile(title: "Holidays", image: AssetImage('Images/holidays.png')),
               ),
@@ -48,7 +48,7 @@ class Updates extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/thirteen');
+                  Navigator.pushNamed(context, '/eighteen');
                 },
                 child: UpdatesTile(title: "Extra classes", image: AssetImage('Images/extra_classes.png')),
               ),

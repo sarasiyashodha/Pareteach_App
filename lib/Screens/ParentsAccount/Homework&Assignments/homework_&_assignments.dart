@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 import 'package:mini_project_mobile_app/constants.dart';
 
-class HomeworkAndAssignments2 extends StatelessWidget {
-  const HomeworkAndAssignments2({super.key});
+class HomeworkAndAssignments extends StatelessWidget {
+  const HomeworkAndAssignments({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class HomeworkAndAssignments2 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
+              backgroundImage: AssetImage("Images/parentProfile.jpg"),
             ),
           ),
         ],
@@ -29,7 +29,7 @@ class HomeworkAndAssignments2 extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/twenty_five');
+                  Navigator.pushNamed(context, '/ten');
                 },
                 child: Container(
                   height: 210.0,
@@ -69,7 +69,7 @@ class HomeworkAndAssignments2 extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/twenty_six');
+                  Navigator.pushNamed(context, '/eleven');
                 },
                 child: Container(
                   height: 210.0,

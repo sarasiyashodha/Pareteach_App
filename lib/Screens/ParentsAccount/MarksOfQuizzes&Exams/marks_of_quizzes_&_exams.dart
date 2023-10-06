@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/classwork_tile.dart';
+
 import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 
-
-class MarksOfQuizzesAndExams2 extends StatelessWidget {
-  const MarksOfQuizzesAndExams2({super.key});
+class MarksOfQuizzesAndExams extends StatelessWidget {
+  const MarksOfQuizzesAndExams({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MarksOfQuizzesAndExams2 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
+              backgroundImage: AssetImage("Images/parentProfile.jpg"),
             ),
           ),
         ],
@@ -31,7 +31,7 @@ class MarksOfQuizzesAndExams2 extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/twenty_eight');
+                  Navigator.pushNamed(context, '/thirteen');
                 },
                 child: ClassworkTile(
                   title: "Quizzes",
@@ -43,7 +43,7 @@ class MarksOfQuizzesAndExams2 extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/twenty_nine');
+                  Navigator.pushNamed(context, '/fourteen');
                 },
                 child: ClassworkTile(
                   title: "Exams",

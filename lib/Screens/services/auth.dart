@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Screens/TeachersAccount/models/UserModel.dart';
+import 'package:mini_project_mobile_app/models/UserModel.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/user_provider.dart';
@@ -28,7 +28,7 @@ class AuthServices {
       String uid = userCredential.user!.uid;
       print('Signed in with UID: $uid');
       Provider.of<UserProvider>(context, listen: false).setUserDetails("Anonymous", "anonymous@example.com", "");
-      Navigator.pushNamed(context, '/twenty_five');
+      Navigator.pushNamed(context, '/twenty');
     } catch (err) {
       print(err.toString());
       return null;
