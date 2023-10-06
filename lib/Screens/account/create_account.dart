@@ -5,7 +5,7 @@ import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 
 
 import '../../Components/dropdown_menu.dart';
-import '../services/auth.dart';
+import 'package:mini_project_mobile_app/services/auth.dart';
 
 
 

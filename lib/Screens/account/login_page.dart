@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mini_project_mobile_app/Components/my_button.dart';
 import 'package:mini_project_mobile_app/Components/my_text-field.dart';
 import 'package:mini_project_mobile_app/Components/square_tile.dart';
-import 'package:mini_project_mobile_app/Screens/services/auth.dart';
+import 'package:mini_project_mobile_app/services/auth.dart';
 import 'package:provider/provider.dart';
 import '../../providers/user_provider.dart';
 import 'forgot_password.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/models/UserModel.dart';
 import 'package:mini_project_mobile_app/wrapper.dart';
-import 'package:mini_project_mobile_app/Screens/services/auth.dart';
+import 'package:mini_project_mobile_app/services/auth.dart';
 import 'package:provider/provider.dart';
 import '../account/login_page.dart';
 
