@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:provider/provider.dart';
 import 'dart:io';
+
+import '../../../providers/homework_provider.dart';
 
 class Homework {
   String title;
@@ -20,24 +23,61 @@ class _HomeworkFormState extends State<HomeworkForm> {
   final _formKey = GlobalKey<FormState>();
   late String _title;
   late String _description;
-  late DateTime _dueDate;
+  late DateTime _dueDate = DateTime.now();
 
   List<File> _files = [];
 
-  Future<void> _pickFiles() async {
+  Future<void> _pickFiles(BuildContext context) async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       allowMultiple: true,
       type: FileType.custom,
-      allowedExtensions: ['pdf', 'docx', 'jpg', 'png'], // Add allowed file extensions
+      allowedExtensions: ['pdf', 'docx', 'jpg', 'png'],
     );
 
     if (result != null) {
-      List<File> pickedFiles = result.paths.map((path) => File(path!)).toList();
-      setState(() {
-        _files = pickedFiles;
-      });
+      List<File> pickedFiles = result.paths.map((path) => File(path!)).toList() ?? [];
+      HomeworkProvider homeworkProvider = Provider.of<HomeworkProvider>(context, listen: false);
+      try {
+        await homeworkProvider.uploadFiles(pickedFiles);
+        // Show a success message or navigate to another screen
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Homework uploaded successfully')));
+      } catch (error) {
+        // Handle upload errors
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error uploading homework: $error')));
+      }
     }
   }
+
+  Future<void> _selectDueDate(BuildContext context) async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: _dueDate,
+      firstDate: DateTime.now(),
+      lastDate: DateTime(DateTime.now().year + 5),
+    );
+
+    if (pickedDate != null && pickedDate != _dueDate) {
+      TimeOfDay? pickedTime = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.now(),
+      );
+
+      if (pickedTime != null) {
+        DateTime combinedDateTime = DateTime(
+          pickedDate.year,
+          pickedDate.month,
+          pickedDate.day,
+          pickedTime.hour,
+          pickedTime.minute,
+        );
+
+        setState(() {
+          _dueDate = combinedDateTime;
+        });
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -65,10 +105,17 @@ class _HomeworkFormState extends State<HomeworkForm> {
             },
             onSaved: (value) => _description = value!,
           ),
+          TextFormField(
+            readOnly: true,
+            decoration: InputDecoration(labelText: 'Due Date'),
+            onTap: () {
+              _selectDueDate(context);
+            },
+          ),
           ElevatedButton(
             onPressed: () async{
               // Pick files before uploading
-              await _pickFiles();
+              await _pickFiles(context);
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 // Create a Homework object with the entered data
