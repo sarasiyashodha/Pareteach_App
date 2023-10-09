@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'dart:io';
 
@@ -24,6 +25,7 @@ class _HomeworkFormState extends State<HomeworkForm> {
   late String _title;
   late String _description;
   late DateTime _dueDate = DateTime.now();
+  String _formattedDueDate = '';
 
   List<File> _files = [];
 
@@ -73,10 +75,13 @@ class _HomeworkFormState extends State<HomeworkForm> {
 
         setState(() {
           _dueDate = combinedDateTime;
+          // Format the due date and update the _formattedDueDate string
+          _formattedDueDate = DateFormat('MMM d, yyyy - hh:mm a').format(_dueDate);
         });
       }
     }
   }
+
 
 
   @override
@@ -108,6 +113,8 @@ class _HomeworkFormState extends State<HomeworkForm> {
           TextFormField(
             readOnly: true,
             decoration: InputDecoration(labelText: 'Due Date'),
+            // Show the formatted due date in a Text widget
+            controller: TextEditingController(text: _formattedDueDate),
             onTap: () {
               _selectDueDate(context);
             },

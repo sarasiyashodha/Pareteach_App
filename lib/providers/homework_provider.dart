@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'dart:io';
+import '../Screens/TeachersAccount/Homework&Assignments/homework2.dart';
 
 class HomeworkProvider with ChangeNotifier {
   List<String> _fileUrls = [];
@@ -24,5 +26,18 @@ class HomeworkProvider with ChangeNotifier {
       }
     }
   }
+
+  // Stream<List<Homework2>> getHomeworks() {
+  //   return FirebaseFirestore.instance.collection('homeworks').snapshots().map((snapshot) {
+  //     return snapshot.docs.map((doc) {
+  //       Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+  //       return Homework2(
+  //         title: data['title'] ?? '',
+  //         description: data['description'] ?? '',
+  //         dueDate: (data['dueDate'] as Timestamp).toDate(),
+  //       );
+  //     }).toList();
+  //   });
+  // }
 
 }
