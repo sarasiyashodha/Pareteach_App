@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
+import 'dart:io';
 
 class Homework {
   String title;
@@ -19,6 +21,23 @@ class _HomeworkFormState extends State<HomeworkForm> {
   late String _title;
   late String _description;
   late DateTime _dueDate;
+
+  List<File> _files = [];
+
+  Future<void> _pickFiles() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      allowMultiple: true,
+      type: FileType.custom,
+      allowedExtensions: ['pdf', 'docx', 'jpg', 'png'], // Add allowed file extensions
+    );
+
+    if (result != null) {
+      List<File> pickedFiles = result.paths.map((path) => File(path!)).toList();
+      setState(() {
+        _files = pickedFiles;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +66,9 @@ class _HomeworkFormState extends State<HomeworkForm> {
             onSaved: (value) => _description = value!,
           ),
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async{
+              // Pick files before uploading
+              await _pickFiles();
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 // Create a Homework object with the entered data
