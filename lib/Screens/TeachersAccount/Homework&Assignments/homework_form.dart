@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:io';
 
 import '../../../providers/homework_provider.dart';
@@ -119,7 +120,11 @@ class _HomeworkFormState extends State<HomeworkForm> {
               _selectDueDate(context);
             },
           ),
+          SizedBox(height: 20.0,),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF305D62), // Background color
+            ),
             onPressed: () async{
               // Pick files before uploading
               await _pickFiles(context);
@@ -134,6 +139,17 @@ class _HomeworkFormState extends State<HomeworkForm> {
             },
             child: Text('Upload Homework'),
           ),
+          SizedBox(height: 20.0,),
+          for (int i = 0; i < Provider.of<HomeworkProvider>(context).fileNames.length; i++)
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black38, // Background color
+              ),
+              onPressed: () {
+                launchUrl(Provider.of<HomeworkProvider>(context).fileUrls[i] as Uri);
+              },
+              child: Text('${Provider.of<HomeworkProvider>(context).fileNames[i]}'),
+            ),
         ],
       ),
     );

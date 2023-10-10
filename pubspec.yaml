@@ -24,6 +24,7 @@ dependencies:
   file_picker: ^5.5.0
   firebase_storage: ^11.2.8
   intl: ^0.18.1
+  url_launcher: ^6.1.14
 
 
 dev_dependencies:

@@ -6,8 +6,10 @@ import '../Screens/TeachersAccount/Homework&Assignments/homework2.dart';
 
 class HomeworkProvider with ChangeNotifier {
   List<String> _fileUrls = [];
+  List<String> _fileNames = [];
 
   List<String> get fileUrls => _fileUrls;
+  List<String> get fileNames => _fileNames;
 
   Future<void> uploadFiles(List<File> files) async {
     for (File file in files) {
@@ -16,7 +18,9 @@ class HomeworkProvider with ChangeNotifier {
         UploadTask uploadTask = storageReference.putFile(file);
         await uploadTask.whenComplete(() async {
           String downloadURL = await storageReference.getDownloadURL();
+          String fileName = storageReference.name; // Get the file name
           _fileUrls.add(downloadURL);
+          _fileNames.add(fileName);
           notifyListeners();
         });
       } catch (error) {
@@ -27,17 +31,6 @@ class HomeworkProvider with ChangeNotifier {
     }
   }
 
-  // Stream<List<Homework2>> getHomeworks() {
-  //   return FirebaseFirestore.instance.collection('homeworks').snapshots().map((snapshot) {
-  //     return snapshot.docs.map((doc) {
-  //       Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-  //       return Homework2(
-  //         title: data['title'] ?? '',
-  //         description: data['description'] ?? '',
-  //         dueDate: (data['dueDate'] as Timestamp).toDate(),
-  //       );
-  //     }).toList();
-  //   });
-  // }
+
 
 }
