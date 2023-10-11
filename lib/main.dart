@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
         '/seven': (context) => VerifiedOTP(),
         '/eight': (context) => Profile(),
         '/nine': (context) => HomeworkAndAssignments(),
-        '/ten': (context) => Homework(),
+        '/ten': (context) => ParentScreen(),
         '/eleven': (context) => Assignments(),
         '/twelve': (context) => MarksOfQuizzesAndExams(),
         '/thirteen': (context) => MarksOfQuizzes(),

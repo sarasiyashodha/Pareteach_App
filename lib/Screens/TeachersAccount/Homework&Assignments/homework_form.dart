@@ -8,13 +8,7 @@ import 'dart:io';
 
 import '../../../providers/homework_provider.dart';
 
-class Homework {
-  String title;
-  String description;
-  DateTime dueDate;
-
-  Homework({required this.title, required this.description, required this.dueDate});
-}
+import 'package:mini_project_mobile_app/models/homework_model.dart';
 
 class HomeworkForm extends StatefulWidget {
   @override
@@ -27,8 +21,6 @@ class _HomeworkFormState extends State<HomeworkForm> {
   late String _description;
   late DateTime _dueDate = DateTime.now();
   String _formattedDueDate = '';
-
-  List<File> _files = [];
 
   Future<void> _pickFiles(BuildContext context) async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
@@ -131,10 +123,10 @@ class _HomeworkFormState extends State<HomeworkForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 // Create a Homework object with the entered data
-                Homework homework = Homework(title: _title, description: _description, dueDate: _dueDate);
+                Homework homework = Homework(title: _title, description: _description, dueDate: _dueDate, fileNames: [], fileUrls: []);
 
                 // Upload the homework to Firestore
-                uploadHomework(homework);
+                Provider.of<HomeworkProvider>(context, listen: false).uploadHomework(homework);
               }
             },
             child: Text('Upload Homework'),
