@@ -83,8 +83,18 @@ class _HomeworkFormState extends State<HomeworkForm> {
       key: _formKey,
       child: Column(
         children: [
+          SizedBox(height: 100,),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Title'),
+            decoration: InputDecoration(
+                labelText: 'Title',
+              labelStyle: TextStyle(color: Color(0xFF305D62),), // Change label text color
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xFF305D62),), // Change border color when focused
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey), // Change border color when not focused
+              ),
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter a title';
@@ -93,8 +103,18 @@ class _HomeworkFormState extends State<HomeworkForm> {
             },
             onSaved: (value) => _title = value!,
           ),
+          SizedBox(height: 20,),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Description'),
+            decoration: InputDecoration(
+              labelText: 'Description',
+              labelStyle: TextStyle(color: Color(0xFF305D62),), // Change label text color
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xFF305D62),), // Change border color when focused
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey), // Change border color when not focused
+              ),
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter a description';
@@ -103,9 +123,19 @@ class _HomeworkFormState extends State<HomeworkForm> {
             },
             onSaved: (value) => _description = value!,
           ),
+          SizedBox(height: 20,),
           TextFormField(
             readOnly: true,
-            decoration: InputDecoration(labelText: 'Due Date'),
+            decoration: InputDecoration(
+              labelText: 'Due Date',
+              labelStyle: TextStyle(color: Color(0xFF305D62),), // Change label text color
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xFF305D62),), // Change border color when focused
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey), // Change border color when not focused
+              ),
+            ),
             // Show the formatted due date in a Text widget
             controller: TextEditingController(text: _formattedDueDate),
             onTap: () {

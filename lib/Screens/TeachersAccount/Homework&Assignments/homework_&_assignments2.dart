@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/nav_bar.dart';
+import 'package:mini_project_mobile_app/Screens/TeachersAccount/Homework&Assignments/teacher_screen.dart';
 import 'package:mini_project_mobile_app/constants.dart';
 
 class HomeworkAndAssignments2 extends StatelessWidget {
@@ -29,7 +30,11 @@ class HomeworkAndAssignments2 extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/twenty_five');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => TeacherScreen(),
+                    ),
+                  );
                 },
                 child: Container(
                   height: 210.0,
@@ -69,7 +74,11 @@ class HomeworkAndAssignments2 extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/twenty_six');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => TeacherScreen(),
+                    ),
+                  );
                 },
                 child: Container(
                   height: 210.0,

@@ -104,7 +104,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         },
                       ),
 
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
 
                       MyTextField(
                         validator: (val) =>
@@ -119,7 +119,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         },
                       ),
 
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
 
                       MyTextField(
                         validator: (val) => val?.isEmpty == true
@@ -135,7 +135,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         },
                       ),
 
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
 
                       MyTextField(
                         validator: (val) =>
@@ -149,6 +149,8 @@ class _CreateAccountState extends State<CreateAccount> {
                           });
                         },
                       ),
+
+                      const SizedBox(height: 10),
 
                       MyDropdownField(
                         selectedValue: selectedRole,

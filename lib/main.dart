@@ -8,7 +8,7 @@ import 'firebase_options.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/splash_screen.dart';
 import 'package:mini_project_mobile_app/Screens/HomePage/user_selection_page.dart';
 import 'package:mini_project_mobile_app/Screens/ParentsAccount/Homework&Assignments/homework_&_assignments.dart';
-import 'package:mini_project_mobile_app/Screens/ParentsAccount/Homework&Assignments/homework.dart';
+import 'package:mini_project_mobile_app/Screens/ParentsAccount/Homework&Assignments/parent_screen.dart';
 import 'package:mini_project_mobile_app/Screens/ParentsAccount/Homework&Assignments/assignments.dart';
 import 'package:mini_project_mobile_app/Screens/ParentsAccount/MarksOfQuizzes&Exams/marks_of_quizzes_&_exams.dart';
 import 'package:mini_project_mobile_app/Screens/ParentsAccount/MarksOfQuizzes&Exams/marks_of_quizzes.dart';
