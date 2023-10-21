@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SaveButton extends StatelessWidget {
+class EditButton extends StatelessWidget {
   final Function()? onTap;
+  final bool isEditing;
+  final Text child;
 
-  const SaveButton({Key? key, required this.onTap}) : super(key: key);
+  const EditButton({Key? key, required this.onTap, required this.child, required this.isEditing}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +19,7 @@ class SaveButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
-          child: Text(
-            "Save",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
+          child: child,
         ),
       ),
     );
