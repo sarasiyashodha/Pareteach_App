@@ -13,6 +13,21 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  bool _isEditing = false;
+  late TextEditingController _userNameController;
+  late TextEditingController _userIdController;
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
+
+  @override
+  void initState() {
+    super.initState();
+    _userNameController = TextEditingController(text: 'Jameson Smith');
+    _userIdController = TextEditingController(text: 'T001');
+    _emailController = TextEditingController(text: 'jamesonsmith@gmail.com');
+    _passwordController = TextEditingController(text: 'jameson#123');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
