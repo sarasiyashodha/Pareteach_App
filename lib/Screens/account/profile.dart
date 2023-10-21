@@ -84,26 +84,59 @@ class _ProfileState extends State<Profile> {
 
 
             TextFormField(
-              decoration: InputDecoration(labelText: 'User Name'),
+              decoration: InputDecoration(labelText: 'User Name',
+                labelStyle: TextStyle(color: Color(0xFF305D62),),
+              ),
               controller: _userNameController,
               enabled: _isEditing,
-            ),
-            TextFormField(
-              decoration: InputDecoration(labelText: 'User ID'),
-              controller: _userIdController,
-              enabled: _isEditing,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: _isEditing ? Colors.black54 : Colors.black,
+              ),
 
             ),
+            SizedBox(height: 20),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: 'User ID',
+                labelStyle: TextStyle(color: Color(0xFF305D62),),
+              ),
+              controller: _userIdController,
+              enabled: _isEditing,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: _isEditing ? Colors.black54 : Colors.black,
+              ),
+
+            ),
+            SizedBox(height: 20),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'Email',
+                labelStyle: TextStyle(color: Color(0xFF305D62),),
+
+              ),
               controller: _emailController,
               enabled: _isEditing,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: _isEditing ? Colors.black54 : Colors.black,
+              ),
             ),
+            SizedBox(height: 20),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(labelText: 'Password',
+                labelStyle: TextStyle(color: Color(0xFF305D62),), // Change label text color
+              ),
               controller: _passwordController,
               obscureText: true,
               enabled: _isEditing,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: _isEditing ? Colors.black54 : Colors.black,
+              ),
             ),
 
             SizedBox(height: 20),
