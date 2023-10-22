@@ -1,9 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/edit_button.dart';
 import 'package:mini_project_mobile_app/Components/nav_bar.dart';
+import 'package:provider/provider.dart';
 
 
 import '../../Components/save_button.dart';
+import '../../models/profile_model.dart';
+import '../../providers/profile_provider.dart';
+import '../../services/image_picker.dart';
 
 
 class Profile extends StatefulWidget {
@@ -20,6 +26,8 @@ class _ProfileState extends State<Profile> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
 
+  File? _selectedImage;
+
   @override
   void initState() {
     super.initState();
@@ -31,6 +39,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    UserProfile? userProfile = Provider.of<UserProfileProvider>(context).userProfile;
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(
@@ -46,8 +55,10 @@ class _ProfileState extends State<Profile> {
                 alignment: Alignment.center,
                 children: [
                   CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('Images/TeachersProfile.jpeg'),
+                    radius: 70,
+                    backgroundImage: _selectedImage != null
+                        ? FileImage(_selectedImage!)  // Convert File to FileImage
+                        : null,
                   ),
                   Positioned(
                     bottom: 0,
@@ -55,6 +66,11 @@ class _ProfileState extends State<Profile> {
                     child: GestureDetector(
                       onTap: () {
                         // Handle profile image editing
+                        FileImagePicker().pickImage().then((image) {
+                          setState(() {
+                            _selectedImage = image;
+                          });
+                        });
                       },
                       child: Container(
                         height: 40,
