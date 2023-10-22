@@ -196,7 +196,7 @@ class _CreateAccountState extends State<CreateAccount> {
 
                 // create account button
                 CreateAccountButton(onTap: () async {
-                  dynamic result = await AuthServices().registerWithEmailAndPassword(context: context, username: userName,
+                  dynamic result = await AuthServices().registerWithEmailAndPassword(context: context, userID: userId, username: userName,
                       email: email, 
                       password: password, selectedRole: selectedRole);
 

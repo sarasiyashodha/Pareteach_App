@@ -27,7 +27,7 @@ class AuthServices {
       UserCredential userCredential = await _auth.signInAnonymously();
       String uid = userCredential.user!.uid;
       print('Signed in with UID: $uid');
-      Provider.of<UserProvider>(context, listen: false).setUserDetails("Anonymous", "anonymous@example.com", "");
+      Provider.of<UserProvider>(context, listen: false).setUserDetails("Anonymous", "anonymous@example.com", "", "", "");
       Navigator.pushNamed(context, '/twenty');
     } catch (err) {
       print(err.toString());
@@ -37,7 +37,7 @@ class AuthServices {
 
   //register using email and password
   Future registerWithEmailAndPassword(
-      {required BuildContext context, required String username, required String email, required String password, required String selectedRole}) async {
+      {required BuildContext context, required String userID, required String username, required String email, required String password, required String selectedRole}) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -46,13 +46,14 @@ class AuthServices {
 
       if (user != null) {
         await _firestore.collection('users').doc(user.uid).set({
+          'userID': userID,
           'username': username,
           'email': email,
           'role': selectedRole,
           // Add other fields as needed
         });
 
-        Provider.of<UserProvider>(context, listen: false).setUserDetails(username, email, selectedRole);
+        Provider.of<UserProvider>(context, listen: false).setUserDetails(userID, username, email, selectedRole, password);
 
 
 
@@ -74,7 +75,8 @@ class AuthServices {
   }
 
   //signin using userId and password
-  Future signInUsingEmailAndPassword(BuildContext context, String username,String email, String password) async {
+  Future signInUsingEmailAndPassword({required BuildContext context, required String userId, required
+    String username,required String email, required String password}) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -89,7 +91,7 @@ class AuthServices {
 
         // Set user details including the role when successfully logged in
         Provider.of<UserProvider>(context, listen: false)
-            .setUserDetails(username, email, role);
+            .setUserDetails(userId, username, email, role, password);
         return _userWithFirebaseUserUid(user);
       }
     } catch (err) {

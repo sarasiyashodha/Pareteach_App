@@ -27,6 +27,9 @@ class _LoginPageState extends State<LoginPage> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final userIdController = TextEditingController();
+  final usernameController = TextEditingController();
+
 
   Future<void> signInAnonymously(BuildContext context) async {
     try {
@@ -132,8 +135,9 @@ class _LoginPageState extends State<LoginPage> {
                 MyButton(
                   onTap: () async {
                     if (_formKey.currentState?.validate() ?? false) {
+
                       dynamic result = await AuthServices()
-                          .signInUsingEmailAndPassword(context, "user", email, password, );
+                          .signInUsingEmailAndPassword(context: context, email: email, password: password, userId: "" , username: "" );
                       if (result == null) {
                         setState(() {
                           error = "Invalid credentials. Please try again.";
