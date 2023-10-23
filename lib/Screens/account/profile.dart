@@ -197,48 +197,7 @@ class _ProfileState extends State<Profile> {
                       ),),
                     ),
                     if (_isEditing)
-                      // SaveButton(
-                      //   onTap: () async{
-                      //     // Get the updated user data from the controllers
-                      //     String userName = _userNameController.text;
-                      //     String userId = _userIdController.text;
-                      //     String email = _emailController.text;
-                      //     String password = _passwordController.text;
-                      //
-                      //     UserProfile updatedUserProfile = UserProfile(
-                      //       userName: userName,
-                      //       userId: userId,
-                      //       email: email,
-                      //     );
-                      //
-                      //     // Update local user data
-                      //     bool success = await Provider.of<UserProvider>(context, listen: false)
-                      //         .updateUserProfile(updatedUserProfile);
-                      //
-                      //     // Update user data in the provider or state management solution you are using
-                      //
-                      //     if (success) {
-                      //       // Update local user data
-                      //       Provider.of<UserProvider>(context, listen: false).setUserDetails(
-                      //         userId,
-                      //         userName,
-                      //         email,
-                      //         '', // Set the user role as needed
-                      //         password,
-                      //       );
-                      //
-                      //
-                      //       // Exit edit mode after saving if the update was successful
-                      //       setState(() {
-                      //         _isEditing = false;
-                      //       });
-                      //     } else {
-                      //       // Handle the case where the update fails, show an error message or retry logic
-                      //       print('Failed to update user data.');
-                      //       // Optionally show an error message or handle the error in another way
-                      //     }
-                      //   },
-                      // ),
+
                       SaveButton(
                         onTap: () async {
                           // Get the updated user data from the controllers
