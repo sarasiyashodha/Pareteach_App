@@ -23,9 +23,9 @@ class NavBar extends StatelessWidget {
             accountName: Text(userProvider.userName ?? ""),
             accountEmail: Text(userProvider.userEmail ?? ""),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: userProvider.userRole == 'Teacher'
-                  ? AssetImage('Images/TeachersProfile.jpeg')
-                  : AssetImage('Images/parentProfile.jpg'),
+              backgroundImage: userProvider.profileImageUrl != null
+                  ? NetworkImage(userProvider.profileImageUrl!)
+                  : null,
               radius: 25.0,
             ),
           ),

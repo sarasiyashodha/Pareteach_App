@@ -32,19 +32,24 @@ class _ProfileState extends State<Profile> {
 
   File? _selectedImage;
 
+  @override
+  void initState() {
+    super.initState();
+    var userProfile = Provider.of<UserProvider>(context, listen: false);
+    _userNameController = TextEditingController(text: userProfile.userName ?? '');
+    _userIdController = TextEditingController(text: userProfile.userId ?? '');
+    _emailController = TextEditingController(text: userProfile.userEmail ?? '');
+    _passwordController = TextEditingController(text: userProfile.password ?? '');
+  }
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   var userProfile = Provider.of<UserProvider>(context);
-  //   _userNameController = TextEditingController(text: userProfile?.userName ?? '');
-  //   _userIdController = TextEditingController(text: userProfile?.userId ?? '');
-  //   _emailController = TextEditingController(text: userProfile?.email ?? '');
-  //   _passwordController = TextEditingController(text: userProfile?.password ?? '');
-  // }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
+    var userProvider = Provider.of<UserProvider>(context);
 
     return Scaffold(
       drawer: NavBar(),
@@ -76,7 +81,9 @@ class _ProfileState extends State<Profile> {
                         radius: 70,
                         backgroundImage: _selectedImage != null
                             ? FileImage(_selectedImage!)  // Convert File to FileImage
-                            : null,
+                            : userProvider.profileImageUrl != null
+                            ? NetworkImage(userProvider.profileImageUrl!)
+                            : AssetImage('Images/defaultProfile.jpg') as ImageProvider,
                       ),
                       Positioned(
                         bottom: 0,
@@ -190,36 +197,76 @@ class _ProfileState extends State<Profile> {
                       ),),
                     ),
                     if (_isEditing)
+                      // SaveButton(
+                      //   onTap: () async{
+                      //     // Get the updated user data from the controllers
+                      //     String userName = _userNameController.text;
+                      //     String userId = _userIdController.text;
+                      //     String email = _emailController.text;
+                      //     String password = _passwordController.text;
+                      //
+                      //     UserProfile updatedUserProfile = UserProfile(
+                      //       userName: userName,
+                      //       userId: userId,
+                      //       email: email,
+                      //     );
+                      //
+                      //     // Update local user data
+                      //     bool success = await Provider.of<UserProvider>(context, listen: false)
+                      //         .updateUserProfile(updatedUserProfile);
+                      //
+                      //     // Update user data in the provider or state management solution you are using
+                      //
+                      //     if (success) {
+                      //       // Update local user data
+                      //       Provider.of<UserProvider>(context, listen: false).setUserDetails(
+                      //         userId,
+                      //         userName,
+                      //         email,
+                      //         '', // Set the user role as needed
+                      //         password,
+                      //       );
+                      //
+                      //
+                      //       // Exit edit mode after saving if the update was successful
+                      //       setState(() {
+                      //         _isEditing = false;
+                      //       });
+                      //     } else {
+                      //       // Handle the case where the update fails, show an error message or retry logic
+                      //       print('Failed to update user data.');
+                      //       // Optionally show an error message or handle the error in another way
+                      //     }
+                      //   },
+                      // ),
                       SaveButton(
-                        onTap: () async{
+                        onTap: () async {
                           // Get the updated user data from the controllers
                           String userName = _userNameController.text;
                           String userId = _userIdController.text;
                           String email = _emailController.text;
                           String password = _passwordController.text;
 
+                          // Upload the new profile image if selected
+                          if (_selectedImage != null) {
+                            String imageUrl = await FileImagePicker().uploadImageToFirebaseStorage(_selectedImage!, userId);
+                            await FileImagePicker().saveImageUrlToFirestore(imageUrl, userId);
+                            Provider.of<UserProvider>(context, listen: false).setProfileImageUrl(imageUrl);
+                          }
+
                           UserProfile updatedUserProfile = UserProfile(
                             userName: userName,
                             userId: userId,
                             email: email,
+
                           );
 
                           // Update local user data
-                          bool success = await Provider.of<UserProvider>(context, listen: false)
-                              .updateUserProfile(updatedUserProfile);
-
-                          // Update user data in the provider or state management solution you are using
+                          bool success = await Provider.of<UserProvider>(context, listen: false).updateUserProfile(updatedUserProfile);
 
                           if (success) {
                             // Update local user data
-                            Provider.of<UserProvider>(context, listen: false).setUserDetails(
-                              userId,
-                              userName,
-                              email,
-                              '', // Set the user role as needed
-                              password,
-                            );
-
+                            Provider.of<UserProvider>(context, listen: false).setUserDetails(userId, userName, email, '', password);
 
                             // Exit edit mode after saving if the update was successful
                             setState(() {
@@ -227,8 +274,9 @@ class _ProfileState extends State<Profile> {
                             });
                           } else {
                             // Handle the case where the update fails, show an error message or retry logic
-                            print('Failed to update user data.');
-                            // Optionally show an error message or handle the error in another way
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text('Failed to update user data.'),
+                            ));
                           }
                         },
                       ),

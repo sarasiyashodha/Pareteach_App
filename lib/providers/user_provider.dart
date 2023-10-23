@@ -11,6 +11,7 @@ class UserProvider with ChangeNotifier {
   String? _userEmail;
   String? _password;
   String _userRole = '';
+  String? _profileImageUrl;
 
   // Getters
   String? get userId => _userId;
@@ -18,6 +19,7 @@ class UserProvider with ChangeNotifier {
   String? get userEmail => _userEmail;
   String? get password => _password;
   String? get userRole => _userRole;
+  String? get profileImageUrl => _profileImageUrl;
 
 
 
@@ -46,6 +48,11 @@ class UserProvider with ChangeNotifier {
       throw e;// Rethrow the exception or handle it according to your application's error handling strategy
 
     }
+  }
+
+  void setProfileImageUrl(String imageUrl) {
+    _profileImageUrl = imageUrl;
+    notifyListeners();
   }
 
 
