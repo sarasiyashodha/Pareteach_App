@@ -182,65 +182,65 @@ class _ProfileState extends State<Profile> {
 
                 SizedBox(height: 20),
 
-                Row(
-                  children: [
-                    EditButton(onTap: (){
-                      setState(() {
-                        _isEditing = !_isEditing;
-                      });
-                    },
-                      isEditing: _isEditing,
-                      child: Text(_isEditing ? 'Cancel' : 'Edit', style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),),
-                    ),
-                    if (_isEditing)
-
-                      SaveButton(
-                        onTap: () async {
-                          // Get the updated user data from the controllers
-                          String userName = _userNameController.text;
-                          String userId = _userIdController.text;
-                          String email = _emailController.text;
-                          String password = _passwordController.text;
-
-                          // Upload the new profile image if selected
-                          if (_selectedImage != null) {
-                            String imageUrl = await FileImagePicker().uploadImageToFirebaseStorage(_selectedImage!, userId);
-                            await FileImagePicker().saveImageUrlToFirestore(imageUrl, userId);
-                            Provider.of<UserProvider>(context, listen: false).setProfileImageUrl(imageUrl);
-                          }
-
-                          UserProfile updatedUserProfile = UserProfile(
-                            userName: userName,
-                            userId: userId,
-                            email: email,
-
-                          );
-
-                          // Update local user data
-                          bool success = await Provider.of<UserProvider>(context, listen: false).updateUserProfile(updatedUserProfile);
-
-                          if (success) {
-                            // Update local user data
-                            Provider.of<UserProvider>(context, listen: false).setUserDetails(userId, userName, email, '', password);
-
-                            // Exit edit mode after saving if the update was successful
-                            setState(() {
-                              _isEditing = false;
-                            });
-                          } else {
-                            // Handle the case where the update fails, show an error message or retry logic
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text('Failed to update user data.'),
-                            ));
-                          }
-                        },
-                      ),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     EditButton(onTap: (){
+                //       setState(() {
+                //         _isEditing = !_isEditing;
+                //       });
+                //     },
+                //       isEditing: _isEditing,
+                //       child: Text(_isEditing ? 'Cancel' : 'Edit', style: TextStyle(
+                //         color: Colors.white,
+                //         fontWeight: FontWeight.bold,
+                //         fontSize: 16,
+                //       ),),
+                //     ),
+                //     if (_isEditing)
+                //
+                //       SaveButton(
+                //         onTap: () async {
+                //           // Get the updated user data from the controllers
+                //           String userName = _userNameController.text;
+                //           String userId = _userIdController.text;
+                //           String email = _emailController.text;
+                //           String password = _passwordController.text;
+                //
+                //           // Upload the new profile image if selected
+                //           if (_selectedImage != null) {
+                //             String imageUrl = await FileImagePicker().uploadImageToFirebaseStorage(_selectedImage!, userId);
+                //             await FileImagePicker().saveImageUrlToFirestore(imageUrl, userId);
+                //             Provider.of<UserProvider>(context, listen: false).setProfileImageUrl(imageUrl);
+                //           }
+                //
+                //           UserProfile updatedUserProfile = UserProfile(
+                //             userName: userName,
+                //             userId: userId,
+                //             email: email,
+                //
+                //           );
+                //
+                //           // Update local user data
+                //           bool success = await Provider.of<UserProvider>(context, listen: false).updateUserProfile(updatedUserProfile);
+                //
+                //           if (success) {
+                //             // Update local user data
+                //             Provider.of<UserProvider>(context, listen: false).setUserDetails(userId, userName, email, '', password);
+                //
+                //             // Exit edit mode after saving if the update was successful
+                //             setState(() {
+                //               _isEditing = false;
+                //             });
+                //           } else {
+                //             // Handle the case where the update fails, show an error message or retry logic
+                //             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                //               content: Text('Failed to update user data.'),
+                //             ));
+                //           }
+                //         },
+                //       ),
+                //   ],
+                // ),
 
                 SizedBox(height: 20),
 

@@ -20,19 +20,18 @@ class _Notifications2State extends State<Notifications2> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
-            ),
+            // child: CircleAvatar(
+            //   backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
+            // ),
           ),
         ],
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            SizedBox(height: 30.0,),
             NotificationBox2(),
-            NotificationBox2(),
-            NotificationBox2(),
+
           ],
         ),
       ),

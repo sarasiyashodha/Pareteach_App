@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
 import 'package:mini_project_mobile_app/Screens/account/create_account.dart';
 import 'package:mini_project_mobile_app/providers/homework_provider.dart';
 import 'package:mini_project_mobile_app/providers/profile_provider.dart';
@@ -35,7 +36,6 @@ import 'package:mini_project_mobile_app/Screens/setting pages/setting_page8.dart
 import 'package:mini_project_mobile_app/Screens/setting pages/setting_page9.dart';
 import 'package:mini_project_mobile_app/Screens/account/profile.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/updates.dart';
-import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/holidays.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/extra_classes.dart';
 import 'package:mini_project_mobile_app/Screens/ParentsAccount/Attendance/attendance_report.dart';
@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         '/thirteen': (context) => MarksOfQuizzes(),
         '/fourteen': (context) => MarksOfExams(),
         '/fifteen': (context) => Updates(),
-        '/sixteen': (context) => Events(),
+        '/sixteen': (context) => TableEvents(),
         '/seventeen': (context) => Holidays(),
         '/eighteen': (context) => ExtraClasses(),
         '/nineteen': (context) => AttendanceReport(),
