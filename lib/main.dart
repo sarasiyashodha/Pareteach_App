@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mini_project_mobile_app/Screens/Updates/events.dart';
 import 'package:mini_project_mobile_app/Screens/account/create_account.dart';
+import 'package:mini_project_mobile_app/Screens/calls.dart';
 import 'package:mini_project_mobile_app/providers/homework_provider.dart';
 import 'package:mini_project_mobile_app/providers/profile_provider.dart';
 import 'package:mini_project_mobile_app/providers/user_provider.dart';
@@ -96,8 +97,8 @@ class MyApp extends StatelessWidget {
         '/fourteen': (context) => MarksOfExams(),
         '/fifteen': (context) => Updates(),
         '/sixteen': (context) => TableEvents(),
-        '/seventeen': (context) => Holidays(),
-        '/eighteen': (context) => ExtraClasses(),
+        '/seventeen': (context) => TableHoliday(),
+        '/eighteen': (context) => TableExtra(),
         '/nineteen': (context) => AttendanceReport(),
         '/twenty': (context) => Notifications(),
         '/twenty_one': (context) => Recommendations(),
@@ -122,6 +123,7 @@ class MyApp extends StatelessWidget {
         '/forty': (context) => SettingPage8(),
         '/forty_one': (context) => SettingPage9(),
         '/forty_two': (context) => SettingPage10(),
+        '/forty_three': (context) => Calls()
 
       
 

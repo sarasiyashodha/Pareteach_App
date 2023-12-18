@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_mobile_app/Components/nav_bar.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 
 class AttendanceReport2 extends StatefulWidget {
@@ -20,9 +21,9 @@ class _AttendanceReport2State extends State<AttendanceReport2> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
-            ),
+            // child: CircleAvatar(
+            //   backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
+            // ),
           ),
         ],
       ),
@@ -34,11 +35,11 @@ class _AttendanceReport2State extends State<AttendanceReport2> {
             const SizedBox(
               height: 40.0,
             ),
-            // TableCalendar(
-            //   focusedDay: DateTime.now(),
-            //   firstDay: DateTime.utc(2000, 01, 01),
-            //   lastDay: DateTime.utc(2030, 12, 31),
-            // ),
+            TableCalendar(
+              focusedDay: DateTime.now(),
+              firstDay: DateTime.utc(2000, 01, 01),
+              lastDay: DateTime.utc(2030, 12, 31),
+            ),
           ],
         ),
       ),

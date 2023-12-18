@@ -23,9 +23,9 @@ class _MarksOfExams2State extends State<MarksOfExams2> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
-            ),
+            // child: CircleAvatar(
+            //   backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
+            // ),
           ),
         ],
       ),

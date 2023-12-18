@@ -20,9 +20,9 @@ class _Recommendations2State extends State<Recommendations2> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
-            ),
+            // child: CircleAvatar(
+            //   backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
+            // ),
           ),
         ],
       ),

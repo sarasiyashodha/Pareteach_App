@@ -13,9 +13,9 @@ class SettingPage5 extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
-            ),
+            // child: CircleAvatar(
+            //   backgroundImage: AssetImage("Images/TeachersProfile.jpeg"),
+            // ),
           ),
         ],
       ),
