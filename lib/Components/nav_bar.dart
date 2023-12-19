@@ -18,16 +18,19 @@ class NavBar extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(
-              color: Color(0XFF305D62),
+              image: DecorationImage(
+                image: AssetImage('Images/drawerImage.jpg'), // Replace with your image asset path
+                fit: BoxFit.cover,
+              ),
             ),
-            accountName: Text(userProvider.userName ?? ""),
-            accountEmail: Text(userProvider.userEmail ?? ""),
-            currentAccountPicture: CircleAvatar(
-              backgroundImage: userProvider.profileImageUrl != null
-                  ? NetworkImage(userProvider.profileImageUrl!)
-                  : null,
-              radius: 25.0,
-            ),
+            accountName: Text(userProvider.userName ?? "", style: TextStyle(fontSize: 25), ),
+            accountEmail: Text(userProvider.userEmail ?? "", style: TextStyle(fontSize: 25),),
+            // currentAccountPicture: CircleAvatar(
+            //   backgroundImage: userProvider.profileImageUrl != null
+            //       ? NetworkImage(userProvider.profileImageUrl!)
+            //       : null,
+            //   radius: 25.0,
+            // ),
           ),
 
           ListTile(

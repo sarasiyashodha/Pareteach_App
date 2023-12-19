@@ -28,12 +28,11 @@ class _NotificationsState extends State<Notifications> {
       ),
       body: Center(
         child: Column(
-
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(height: 30.0,),
             NotificationBox(),
-            // NotificationBox(),
-            // NotificationBox(),
+            NotificationBox(),
+            NotificationBox(),
           ],
         ),
       ),
