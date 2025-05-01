@@ -12,7 +12,7 @@ class Calls extends StatelessWidget {
         body: Center(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Color(0xFF305D62), // Change the background color here
+              backgroundColor: Color(0xFF305D62), // Change the background color here
               fixedSize: Size(200, 100),
             ),
             onPressed: () {

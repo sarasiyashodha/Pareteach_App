@@ -30,7 +30,7 @@ class _HomeworkFormState extends State<HomeworkForm> {
     );
 
     if (result != null) {
-      List<File> pickedFiles = result.paths?.map((path) => File(path!)).toList() ?? [];
+      List<File> pickedFiles = result.paths.map((path) => File(path!)).toList() ?? [];
       HomeworkProvider homeworkProvider = Provider.of<HomeworkProvider>(context, listen: false);
       try {
         await homeworkProvider.uploadFiles(pickedFiles);

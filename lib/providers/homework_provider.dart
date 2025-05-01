@@ -39,7 +39,7 @@ class HomeworkProvider with ChangeNotifier {
     // Initialize Firebase Firestore and listen to changes in the 'homeworks' collection
     FirebaseFirestore.instance.collection('homeworks').snapshots().listen((snapshot) {
       _homeworks = snapshot.docs.map((doc) {
-        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+        Map<String, dynamic> data = doc.data();
         return Homework(
           title: data['title'] ?? '',
           description: data['description'] ?? '',

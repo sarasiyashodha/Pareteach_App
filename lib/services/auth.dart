@@ -5,7 +5,6 @@ import 'package:mini_project_mobile_app/models/UserModel.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/user_provider.dart';
-import '../models/profile_model.dart';
 
 class AuthServices {
   //firebase instance
@@ -55,11 +54,7 @@ class AuthServices {
         });
 
         Provider.of<UserProvider>(context, listen: false).setUserDetails(userID, username, email, selectedRole, password);
-
-
-
       }
-
       return user;
 
     } on FirebaseAuthException catch (e) {

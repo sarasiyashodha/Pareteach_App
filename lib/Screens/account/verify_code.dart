@@ -68,7 +68,7 @@ class VerifyCode extends StatelessWidget {
                           },
                           onSaved: (pin) {},
                           decoration: InputDecoration(hintText: ""),    
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.titleLarge,
                           keyboardType: TextInputType.number,
                           textAlign: TextAlign.center,
                           inputFormatters: [

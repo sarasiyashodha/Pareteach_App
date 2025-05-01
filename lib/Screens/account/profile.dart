@@ -1,17 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app/Components/edit_button.dart';
 import 'package:mini_project_mobile_app/Components/nav_bar.dart';
 import 'package:provider/provider.dart';
 
 
-import '../../Components/save_button.dart';
-import '../../models/profile_model.dart';
-import '../../providers/profile_provider.dart';
 import '../../providers/user_provider.dart';
 
-import '../../services/firestore_service.dart';
 import '../../services/image_picker.dart';
 
 
